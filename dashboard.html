@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSS Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">◈</div>
+        <div>
+          <h1>DSS Panel</h1>
+          <p>Decision Support</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <p class="menu-label">Navigation</p>
+        <a href="dashboard.html" class="active"><span class="icon">⌂</span>Dashboard</a>
+        <a href="dashboard-sidebar.html"><span class="icon">ℹ</span>About</a>
+        <a href="products.html"><span class="icon">◫</span>Products</a>
+        <a href="dss.html"><span class="icon">☰</span>Orders</a>
+        <a href="analytics.html"><span class="icon">◔</span>Analytics</a>
+        <a href="analytics.html"><span class="icon">✦</span>Marketing</a>
+        <a href="products.html"><span class="icon">★</span>Reviews</a>
+        <a href="login.html"><span class="icon">✉</span>Contact</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="page-header">
+        <div>
+          <h2>Dashboard Main Page</h2>
+          <p>Dark neumorphism layout with metrics and an overview chart.</p>
+        </div>
+        <div class="header-pill">Updated 2025 dataset</div>
+      </section>
+
+      <section class="grid metrics-grid">
+        <article class="metric-card">
+          <p>Total Products</p>
+          <div class="metric-value">32</div>
+        </article>
+        <article class="metric-card">
+          <p>Total Users</p>
+          <div class="metric-value">8.4K</div>
+        </article>
+        <article class="metric-card">
+          <p>Active DSS Runs</p>
+          <div class="metric-value">214</div>
+        </article>
+        <article class="metric-card">
+          <p>Conversion Rate</p>
+          <div class="metric-value">68%</div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="chart-card">
+          <h3>Sales Overview</h3>
+          <p>Chart.js area reserved for dashboard trend data.</p>
+          <div class="chart-wrap">
+            <canvas id="dashboardChart"></canvas>
+          </div>
+        </article>
+
+        <article class="section-card">
+          <h3>Quick Insights</h3>
+          <p>Key metrics from the DSS environment.</p>
+          <div class="ranking-list">
+            <div class="ranking-item"><span>Top Brand</span><strong>Apple</strong></div>
+            <div class="ranking-item"><span>Highest Demand</span><strong>iPhone 16</strong></div>
+            <div class="ranking-item"><span>Best Growth</span><strong>Samsung 2024</strong></div>
+            <div class="ranking-item"><span>Avg. Score</span><strong>87.5</strong></div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/charts.js"></script>
+</body>
+</html>

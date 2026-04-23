@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSS Evaluation</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">◈</div>
+        <div>
+          <h1>DSS Panel</h1>
+          <p>Decision Support</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <p class="menu-label">Navigation</p>
+        <a href="dashboard.html"><span class="icon">⌂</span>Dashboard</a>
+        <a href="dashboard-sidebar.html"><span class="icon">ℹ</span>About</a>
+        <a href="products.html"><span class="icon">◫</span>Products</a>
+        <a href="dss.html" class="active"><span class="icon">☰</span>Orders</a>
+        <a href="analytics.html"><span class="icon">◔</span>Analytics</a>
+        <a href="analytics.html"><span class="icon">✦</span>Marketing</a>
+        <a href="products.html"><span class="icon">★</span>Reviews</a>
+        <a href="login.html"><span class="icon">✉</span>Contact</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="page-header">
+        <div>
+          <h2>DSS UI Page</h2>
+          <p>Select models, set preference weights, and view ranking results.</p>
+        </div>
+        <div class="header-pill">Frontend connected to Flask API</div>
+      </section>
+
+      <section class="split-layout">
+        <article class="form-card">
+          <h3>Decision Inputs</h3>
+          <p>Enter your preference weights for the phone ranking process.</p>
+
+          <form id="dss-form" class="form-grid">
+            <div class="form-grid two-col">
+              <div class="field">
+                <label for="phone_model_1">Phone Model 1</label>
+                <select id="phone_model_1">
+                  <option>iPhone 17</option>
+                  <option>Samsung Galaxy S25</option>
+                  <option>iPhone 16</option>
+                  <option>Samsung Galaxy S24</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="phone_model_2">Phone Model 2</label>
+                <select id="phone_model_2">
+                  <option>Samsung Galaxy S25</option>
+                  <option>iPhone 17</option>
+                  <option>Samsung Galaxy S24</option>
+                  <option>iPhone 16</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="price_weight">Price Weight</label>
+              <input id="price_weight" type="number" step="0.01" value="0.01">
+            </div>
+
+            <div class="field">
+              <label for="camera_weight">Camera Weight</label>
+              <input id="camera_weight" type="number" step="0.01" value="0.25">
+            </div>
+
+            <div class="field">
+              <label for="battery_weight">Battery Weight</label>
+              <input id="battery_weight" type="number" step="0.01" value="0.25">
+            </div>
+
+            <div class="field">
+              <label for="performance_weight">Performance Weight</label>
+              <input id="performance_weight" type="number" step="0.01" value="0.25">
+            </div>
+
+            <button class="btn" type="submit">Calculate Utility Score</button>
+          </form>
+        </article>
+
+        <article class="result-box">
+          <h3>Winner Result</h3>
+          <p>Results appear here after submitting the form.</p>
+          <div id="winner-box">
+            <div class="winner-badge">
+              <span>Current Winner</span>
+              <strong>Awaiting calculation</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="split-layout">
+        <article class="section-card">
+          <h3>Utility Scores</h3>
+          <p>Each phone score returned from the Flask API.</p>
+          <div id="score-list" class="score-list">
+            <div class="score-item"><span>No scores yet</span><strong>0.00</strong></div>
+          </div>
+        </article>
+
+        <article class="section-card">
+          <h3>Ranking List</h3>
+          <p>Sorted phones from highest to lowest score.</p>
+          <div id="ranking-list" class="ranking-list">
+            <div class="ranking-item"><span>No ranking yet</span><strong>0.00</strong></div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/dss.js"></script>
+</body>
+</html>

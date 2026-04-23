@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSS Analytics</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">◈</div>
+        <div>
+          <h1>DSS Panel</h1>
+          <p>Decision Support</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <p class="menu-label">Navigation</p>
+        <a href="dashboard.html"><span class="icon">⌂</span>Dashboard</a>
+        <a href="dashboard-sidebar.html"><span class="icon">ℹ</span>About</a>
+        <a href="products.html"><span class="icon">◫</span>Products</a>
+        <a href="dss.html"><span class="icon">☰</span>Orders</a>
+        <a href="analytics.html" class="active"><span class="icon">◔</span>Analytics</a>
+        <a href="analytics.html"><span class="icon">✦</span>Marketing</a>
+        <a href="products.html"><span class="icon">★</span>Reviews</a>
+        <a href="login.html"><span class="icon">✉</span>Contact</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="page-header">
+        <div>
+          <h2>Analytics Dashboard UI</h2>
+          <p>Brand comparison and trend charts using Chart.js.</p>
+        </div>
+        <div class="header-pill">Bar • Line • Pie</div>
+      </section>
+
+      <section class="analytics-grid">
+        <article class="chart-card">
+          <h3>Brand Comparison</h3>
+          <div class="chart-wrap small-chart">
+            <canvas id="brandBarChart"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <h3>Trend Over Years</h3>
+          <div class="chart-wrap small-chart">
+            <canvas id="trendLineChart"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <h3>Distribution</h3>
+          <div class="chart-wrap small-chart">
+            <canvas id="distributionPieChart"></canvas>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/charts.js"></script>
+</body>
+</html>
