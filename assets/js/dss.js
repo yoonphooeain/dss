@@ -204,6 +204,14 @@ async function handleSubmit(event) {
     const resultPayload = {
       ...data,
       explanation,
+      weights: {
+        price_weight: payload.price_weight,
+        camera_weight: payload.camera_weight,
+        battery_weight: payload.battery_weight,
+        performance_weight: payload.performance_weight,
+      },
+      selectedModels: payload.dataset.map((item) => item.model),
+      generatedAt: new Date().toISOString(),
     };
 
     renderScores(data.scores);
