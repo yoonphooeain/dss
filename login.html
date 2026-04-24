@@ -3,34 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSS Login</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Login</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
 </head>
-<body>
-  <div class="auth-page">
-    <section class="auth-card">
-      <div class="brand">
-        <div class="brand-mark">◈</div>
+<body class="login-page">
+  <div class="login-page-overlay"></div>
+
+  <main class="login-shell">
+    <section class="login-showcase">
+      <a href="index.html?v=flow13" class="login-back-link">Back to Home</a>
+      <span class="site-kicker">Dashboard Design</span>
+      <h1>Smart phone recommendation dashboard for real users.</h1>
+      <p>
+        Sign in to access the research workspace, compare devices, run DSS evaluation, and review
+        analytics before making a smartphone choice.
+      </p>
+
+      <div class="login-brand-block">
+        <div class="login-brand-mark">✦</div>
         <div>
-          <h2>Welcome Back</h2>
-          <p>Sign in to access your DSS workspace</p>
+          <strong>PhoneDSS</strong>
+          <span>Decision support with integrated analytics and recommendation flow.</span>
         </div>
       </div>
 
-      <form class="form-grid" action="dashboard.html">
-        <div class="field">
+      <div class="login-feature-grid">
+        <article class="login-feature-card">
+          <strong>AI-Inspired</strong>
+          <span>Structured product insights</span>
+        </article>
+        <article class="login-feature-card">
+          <strong>Secure</strong>
+          <span>Private user workspace UI</span>
+        </article>
+        <article class="login-feature-card">
+          <strong>Smart Control</strong>
+          <span>Weights, ranking, and advice</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="login-panel">
+      <form id="login-form" class="login-form" action="dashboard.html?v=flow13">
+        <div class="login-panel-header">
+          <h2>Welcome Back</h2>
+          <p>Sign in to access your dashboard</p>
+        </div>
+
+        <div class="login-field">
           <label for="email">Email Address</label>
-          <input id="email" type="email" placeholder="you@example.com">
+          <div class="login-input-wrap">
+            <span class="login-input-icon">@</span>
+            <input id="email" name="email" type="email" placeholder="admin@phonedss.com" required>
+          </div>
         </div>
 
-        <div class="field">
+        <div class="login-field">
           <label for="password">Password</label>
-          <input id="password" type="password" placeholder="Enter your password">
+          <div class="login-input-wrap">
+            <span class="login-input-icon">•</span>
+            <input id="password" name="password" type="password" placeholder="Enter your password" required>
+          </div>
         </div>
 
-        <button class="btn" type="submit">Login</button>
+        <div class="login-meta-row">
+          <label class="login-check">
+            <input type="checkbox" id="remember_me">
+            <span>Remember me</span>
+          </label>
+          <a href="index.html?v=flow13">Back to home</a>
+        </div>
+
+        <button class="login-submit" type="submit">Sign In</button>
+
+        <div class="login-divider">
+          <span>or continue with</span>
+        </div>
+
+        <div class="login-socials">
+          <button class="login-social-btn" type="button">Google</button>
+          <button class="login-social-btn" type="button">GitHub</button>
+        </div>
       </form>
     </section>
-  </div>
+  </main>
+
+  <script src="assets/js/login.js?v=clean14"></script>
 </body>
 </html>

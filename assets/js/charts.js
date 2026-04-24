@@ -1,21 +1,27 @@
+const chartText = "#eaf3ff";
+const chartMuted = "rgba(214, 227, 245, 0.72)";
+const chartGrid = "rgba(255, 255, 255, 0.08)";
+
 const commonChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     legend: {
       labels: {
-        color: "#eef3fb",
+        color: chartText,
+        boxWidth: 12,
+        usePointStyle: true,
       },
     },
   },
   scales: {
     x: {
-      ticks: { color: "#9aa7bd" },
-      grid: { color: "rgba(255,255,255,0.06)" },
+      ticks: { color: chartMuted },
+      grid: { color: chartGrid },
     },
     y: {
-      ticks: { color: "#9aa7bd" },
-      grid: { color: "rgba(255,255,255,0.06)" },
+      ticks: { color: chartMuted },
+      grid: { color: chartGrid },
     },
   },
 };
@@ -30,12 +36,13 @@ function createDashboardChart() {
       labels: ["2019", "2020", "2021", "2022", "2023", "2024", "2025"],
       datasets: [
         {
-          label: "Sales Trend",
-          data: [120, 160, 180, 220, 260, 300, 340],
-          borderColor: "#5fb3ff",
-          backgroundColor: "rgba(95, 179, 255, 0.18)",
-          tension: 0.35,
+          label: "Evaluation Activity",
+          data: [40, 58, 66, 79, 90, 108, 126],
+          borderColor: "#7ef1ff",
+          backgroundColor: "rgba(126, 241, 255, 0.16)",
           fill: true,
+          tension: 0.35,
+          pointRadius: 3,
         },
       ],
     },
@@ -52,13 +59,13 @@ function createAnalyticsCharts() {
     new Chart(barCanvas, {
       type: "bar",
       data: {
-        labels: ["iPhone", "Samsung"],
+        labels: ["Apple", "Samsung"],
         datasets: [
           {
-            label: "Brand Comparison",
-            data: [88, 84],
-            backgroundColor: ["#5fb3ff", "#7dd3a5"],
-            borderRadius: 14,
+            label: "Average Score",
+            data: [89, 86],
+            backgroundColor: ["rgba(126, 241, 255, 0.88)", "rgba(191, 140, 255, 0.82)"],
+            borderRadius: 16,
           },
         ],
       },
@@ -74,17 +81,17 @@ function createAnalyticsCharts() {
         datasets: [
           {
             label: "iPhone Trend",
-            data: [52, 60, 69, 77, 84, 92],
-            borderColor: "#5fb3ff",
-            backgroundColor: "rgba(95, 179, 255, 0.14)",
+            data: [52, 61, 70, 79, 87, 93],
+            borderColor: "#7ef1ff",
+            backgroundColor: "rgba(126, 241, 255, 0.12)",
             fill: true,
             tension: 0.35,
           },
           {
             label: "Samsung Trend",
-            data: [48, 58, 67, 74, 82, 90],
-            borderColor: "#7dd3a5",
-            backgroundColor: "rgba(125, 211, 165, 0.14)",
+            data: [48, 58, 67, 75, 83, 90],
+            borderColor: "#bf8cff",
+            backgroundColor: "rgba(191, 140, 255, 0.12)",
             fill: true,
             tension: 0.35,
           },
@@ -96,16 +103,18 @@ function createAnalyticsCharts() {
 
   if (pieCanvas) {
     new Chart(pieCanvas, {
-      type: "pie",
+      type: "doughnut",
       data: {
-        labels: ["iPhone", "Samsung"],
+        labels: ["Premium", "Balanced", "Budget Friendly"],
         datasets: [
           {
-            label: "Distribution",
-            data: [50, 50],
-            backgroundColor: ["#5fb3ff", "#ffbf69"],
-            borderColor: "rgba(17, 22, 31, 0.8)",
-            borderWidth: 3,
+            data: [40, 38, 22],
+            backgroundColor: [
+              "rgba(126, 241, 255, 0.88)",
+              "rgba(191, 140, 255, 0.82)",
+              "rgba(255, 210, 125, 0.82)",
+            ],
+            borderWidth: 0,
           },
         ],
       },
@@ -115,7 +124,8 @@ function createAnalyticsCharts() {
         plugins: {
           legend: {
             labels: {
-              color: "#eef3fb",
+              color: chartText,
+              usePointStyle: true,
             },
           },
         },

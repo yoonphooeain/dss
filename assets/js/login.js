@@ -1,0 +1,25 @@
+const loginForm = document.getElementById("login-form");
+const AUTH_KEY = "phonedssAuthenticated";
+
+if (loginForm) {
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("email")?.value.trim() || "guest@phonedss.com";
+    const remember = document.getElementById("remember_me")?.checked || false;
+    const nameFromEmail = email.split("@")[0].replace(/[._-]/g, " ");
+    const displayName = nameFromEmail.replace(/\b\w/g, (char) => char.toUpperCase()) || "Guest User";
+
+    localStorage.setItem(
+      "phonedssUser",
+      JSON.stringify({
+        email,
+        remember,
+        name: displayName,
+      })
+    );
+
+    sessionStorage.setItem(AUTH_KEY, "true");
+    window.location.href = "dashboard.html?v=flow13";
+  });
+}

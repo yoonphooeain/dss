@@ -3,85 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSS Dashboard</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=clean16">
 </head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-mark">◈</div>
-        <div>
-          <h1>DSS Panel</h1>
-          <p>Decision Support</p>
-        </div>
-      </div>
+<body class="dashboard-glass-page">
+  <div class="dashboard-glass-overlay"></div>
 
-      <nav class="menu">
-        <p class="menu-label">Navigation</p>
-        <a href="dashboard.html" class="active"><span class="icon">⌂</span>Dashboard</a>
-        <a href="dashboard-sidebar.html"><span class="icon">ℹ</span>About</a>
-        <a href="products.html"><span class="icon">◫</span>Products</a>
-        <a href="dss.html"><span class="icon">☰</span>Orders</a>
-        <a href="analytics.html"><span class="icon">◔</span>Analytics</a>
-        <a href="analytics.html"><span class="icon">✦</span>Marketing</a>
-        <a href="products.html"><span class="icon">★</span>Reviews</a>
-        <a href="login.html"><span class="icon">✉</span>Contact</a>
+  <main class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+      <a href="admin-profile.html?v=flow13" class="dashboard-profile">
+        <img src="assets/images/dashboard-profile-v2.png?v=flow13" alt="Profile">
+        <div>
+          <span class="dashboard-role">Admin</span>
+          <h2 id="dashboard-user-name">PhoneDSS User</h2>
+          <p id="dashboard-user-email">Signed in workspace</p>
+        </div>
+      </a>
+
+      <nav class="dashboard-menu">
+        <a href="dashboard.html?v=clean16" class="active">Overview</a>
+        <a href="products.html">Products</a>
+        <a href="dss.html">DSS Evaluation</a>
+        <a href="results.html">Recommendation</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="ask-advice.html">Advice</a>
+        <a href="index.html">Back Home</a>
+        <a href="index.html" id="dashboard-logout-btn">Logout</a>
       </nav>
     </aside>
 
-    <main class="content">
-      <section class="page-header">
-        <div>
-          <h2>Dashboard Main Page</h2>
-          <p>Dark neumorphism layout with metrics and an overview chart.</p>
-        </div>
-        <div class="header-pill">Updated 2025 dataset</div>
-      </section>
+    <section class="dashboard-main">
+      <section class="dashboard-card-grid">
+        <article class="dashboard-glass-card revenue-card">
+          <small>Total Models</small>
+          <strong>112</strong>
+          <div class="dashboard-line-chart"></div>
+        </article>
 
-      <section class="grid metrics-grid">
-        <article class="metric-card">
-          <p>Total Products</p>
-          <div class="metric-value">32</div>
-        </article>
-        <article class="metric-card">
-          <p>Total Users</p>
-          <div class="metric-value">8.4K</div>
-        </article>
-        <article class="metric-card">
-          <p>Active DSS Runs</p>
-          <div class="metric-value">214</div>
-        </article>
-        <article class="metric-card">
-          <p>Conversion Rate</p>
-          <div class="metric-value">68%</div>
-        </article>
-      </section>
-
-      <section class="dashboard-grid">
-        <article class="chart-card">
-          <h3>Sales Overview</h3>
-          <p>Chart.js area reserved for dashboard trend data.</p>
-          <div class="chart-wrap">
-            <canvas id="dashboardChart"></canvas>
+        <article class="dashboard-glass-card donut-card">
+          <small>Saved Evaluations</small>
+          <strong>24</strong>
+          <div class="dashboard-progress">
+            <div class="dashboard-progress-ring">68%</div>
+          </div>
+          <div class="dashboard-progress-meta">
+            <span>Daily use 80</span>
+            <span>Camera 40</span>
           </div>
         </article>
 
-        <article class="section-card">
-          <h3>Quick Insights</h3>
-          <p>Key metrics from the DSS environment.</p>
-          <div class="ranking-list">
-            <div class="ranking-item"><span>Top Brand</span><strong>Apple</strong></div>
-            <div class="ranking-item"><span>Highest Demand</span><strong>iPhone 16</strong></div>
-            <div class="ranking-item"><span>Best Growth</span><strong>Samsung 2024</strong></div>
-            <div class="ranking-item"><span>Avg. Score</span><strong>87.5</strong></div>
+        <article class="dashboard-glass-card transaction-card">
+          <small>Recent Recommendation</small>
+          <strong>iPhone 15 Pro</strong>
+          <div class="dashboard-mini-list">
+            <div><span>Score</span><em>8.91</em></div>
+            <div><span>Runner-up</span><em>Galaxy S24 Ultra</em></div>
+            <div><span>Main reason</span><em>Balanced camera and performance</em></div>
+          </div>
+        </article>
+
+        <article class="dashboard-glass-card analytics-card">
+          <small>Dataset Growth</small>
+          <strong>112 Models</strong>
+          <div class="dashboard-bars chart-violet"></div>
+        </article>
+
+        <article class="dashboard-glass-card load-card">
+          <small>Evaluation Progress</small>
+          <strong>Ready</strong>
+          <div class="dashboard-column-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </article>
+
+        <article class="dashboard-glass-card quick-links-card">
+          <small>Quick Access</small>
+          <strong>Workspace Links</strong>
+          <div class="dashboard-quick-links">
+            <a href="products.html">Dataset</a>
+            <a href="dss.html">Evaluate</a>
+            <a href="results.html">Recommendation</a>
+            <a href="analytics.html">Charts</a>
+          </div>
+        </article>
+
+        <article class="dashboard-glass-card insights-card">
+          <small>Criteria Summary</small>
+          <strong>Price, Camera, Battery, Performance</strong>
+          <div class="dashboard-bars chart-blue"></div>
+        </article>
+
+        <article class="dashboard-glass-card progress-list-card">
+          <small>System Flow</small>
+          <strong>DSS Process</strong>
+          <div class="dashboard-progress-list">
+            <div><span>Browse Products</span><em>430 / 900</em></div>
+            <i></i>
+            <div><span>Apply Weights</span><em>120 / 930</em></div>
+            <i></i>
+            <div><span>Get Winner</span><em>Ready</em></div>
+          </div>
+        </article>
+
+        <article class="dashboard-glass-card recent-list-card">
+          <small>Advice Topics</small>
+          <strong>Recent Searches</strong>
+          <div class="dashboard-recent-list">
+            <div><span>Camera Priority</span><em>High</em></div>
+            <div><span>Budget Comparison</span><em>Under $800</em></div>
+            <div><span>Battery Search</span><em>Daily use</em></div>
+            <div><span>Gaming Focus</span><em>Performance</em></div>
           </div>
         </article>
       </section>
-    </main>
-  </div>
+    </section>
+  </main>
 
-  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/dashboard.js?v=clean16"></script>
 </body>
 </html>

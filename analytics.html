@@ -3,68 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSS Analytics</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Analytics</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-mark">◈</div>
-        <div>
-          <h1>DSS Panel</h1>
-          <p>Decision Support</p>
+<body class="site-page">
+  <main class="site-shell">
+    <section class="site-hero">
+      <div>
+        <span class="site-kicker">Analytics</span>
+        <h1>Visualize comparison, trend, and distribution before making a decision.</h1>
+        <p>
+          The analytics page supports the DSS result with charts that compare brands, track trends
+          over time, and show data distribution for presentation and user insight.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Brand comparison</span>
+          <span class="tag">Trend over years</span>
+          <span class="tag">Distribution</span>
         </div>
       </div>
 
-      <nav class="menu">
-        <p class="menu-label">Navigation</p>
-        <a href="dashboard.html"><span class="icon">⌂</span>Dashboard</a>
-        <a href="dashboard-sidebar.html"><span class="icon">ℹ</span>About</a>
-        <a href="products.html"><span class="icon">◫</span>Products</a>
-        <a href="dss.html"><span class="icon">☰</span>Orders</a>
-        <a href="analytics.html" class="active"><span class="icon">◔</span>Analytics</a>
-        <a href="analytics.html"><span class="icon">✦</span>Marketing</a>
-        <a href="products.html"><span class="icon">★</span>Reviews</a>
-        <a href="login.html"><span class="icon">✉</span>Contact</a>
-      </nav>
-    </aside>
+      <div class="site-visual-stack">
+        <article class="hero-visual-card">
+          <span class="site-kicker">Chart Summary</span>
+          <strong>Bar + Line + Doughnut</strong>
+          <p>Clean visuals make the recommendation easier to explain in a thesis demo.</p>
+          <div class="mini-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <main class="content">
-      <section class="page-header">
-        <div>
-          <h2>Analytics Dashboard UI</h2>
-          <p>Brand comparison and trend charts using Chart.js.</p>
+    <section class="chart-panel-grid">
+      <article class="site-card">
+        <span class="site-kicker">Comparison</span>
+        <h3>Brand Comparison</h3>
+        <p>Average research score by brand.</p>
+        <div class="chart-canvas-wrap">
+          <canvas id="brandBarChart"></canvas>
         </div>
-        <div class="header-pill">Bar • Line • Pie</div>
-      </section>
+      </article>
 
-      <section class="analytics-grid">
-        <article class="chart-card">
-          <h3>Brand Comparison</h3>
-          <div class="chart-wrap small-chart">
-            <canvas id="brandBarChart"></canvas>
-          </div>
-        </article>
+      <article class="site-card">
+        <span class="site-kicker">Trend</span>
+        <h3>Trend Over Years</h3>
+        <p>Performance growth pattern for iPhone and Samsung.</p>
+        <div class="chart-canvas-wrap">
+          <canvas id="trendLineChart"></canvas>
+        </div>
+      </article>
 
-        <article class="chart-card">
-          <h3>Trend Over Years</h3>
-          <div class="chart-wrap small-chart">
-            <canvas id="trendLineChart"></canvas>
-          </div>
-        </article>
+      <article class="site-card">
+        <span class="site-kicker">Distribution</span>
+        <h3>Score Distribution</h3>
+        <p>Overall split of device groups in the dataset.</p>
+        <div class="chart-canvas-wrap">
+          <canvas id="distributionPieChart"></canvas>
+        </div>
+      </article>
+    </section>
 
-        <article class="chart-card">
-          <h3>Distribution</h3>
-          <div class="chart-wrap small-chart">
-            <canvas id="distributionPieChart"></canvas>
-          </div>
-        </article>
-      </section>
-    </main>
-  </div>
+    <section class="insight-grid">
+      <article class="site-metric">
+        <span class="site-kicker">Insight</span>
+        <h3>Apple</h3>
+        <p>Stronger high-end camera and performance trend in recent years.</p>
+      </article>
+      <article class="site-metric">
+        <span class="site-kicker">Insight</span>
+        <h3>Samsung</h3>
+        <p>Competitive balance for users who want battery life and flagship variety.</p>
+      </article>
+      <article class="site-metric">
+        <span class="site-kicker">Insight</span>
+        <h3>Use Case</h3>
+        <p>Charts support recommendation, but the final choice should still follow user preference weights.</p>
+      </article>
+    </section>
+  </main>
 
-  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/charts.js?v=clean14"></script>
 </body>
 </html>

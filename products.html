@@ -3,77 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSS Products</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Products and Dataset</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
 </head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-mark">◈</div>
-        <div>
-          <h1>DSS Panel</h1>
-          <p>Decision Support</p>
+<body class="site-page">
+  <main class="site-shell">
+    <section class="site-hero">
+      <div>
+        <span class="site-kicker">Products / Dataset</span>
+        <h1>Search and compare the smartphone dataset in one place.</h1>
+        <p>
+          Explore iPhone and Samsung models from 2010 to 2025 with real device images and key
+          evaluation fields such as price, camera, battery, and performance.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Phone image</span>
+          <span class="tag">Search / filter</span>
+          <span class="tag">Research data view</span>
         </div>
       </div>
 
-      <nav class="menu">
-        <p class="menu-label">Navigation</p>
-        <a href="dashboard.html"><span class="icon">⌂</span>Dashboard</a>
-        <a href="dashboard-sidebar.html"><span class="icon">ℹ</span>About</a>
-        <a href="products.html" class="active"><span class="icon">◫</span>Products</a>
-        <a href="dss.html"><span class="icon">☰</span>Orders</a>
-        <a href="analytics.html"><span class="icon">◔</span>Analytics</a>
-        <a href="analytics.html"><span class="icon">✦</span>Marketing</a>
-        <a href="products.html"><span class="icon">★</span>Reviews</a>
-        <a href="login.html"><span class="icon">✉</span>Contact</a>
-      </nav>
-    </aside>
+      <div class="site-visual-stack">
+        <article class="hero-visual-card">
+          <span class="site-kicker">Dataset Coverage</span>
+          <strong>112 Models</strong>
+          <p>Expanded lineup coverage from 2010 to 2025, including major iPhone and Galaxy flagship variants.</p>
+          <div class="hero-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <main class="content">
-      <section class="page-header">
+    <section class="site-filter">
+      <div class="data-toolbar">
         <div>
-          <h2>Product Page UI</h2>
-          <p>iPhone and Samsung models from 2010 to 2025 in a clean card grid.</p>
+          <h3>Dataset Filters</h3>
+          <p>Search by model and narrow the list by brand or year.</p>
         </div>
-        <div class="header-pill">32 phone models</div>
-      </section>
+        <span id="dataset-count" class="tag">0 results</span>
+      </div>
 
-      <section class="product-grid">
-        <article class="product-card"><h3>iPhone 4</h3><span class="chip">Apple • 2010</span><div class="meta"><span>Camera 5.0</span><span>Battery 4.8</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S</h3><span class="chip">Samsung • 2010</span><div class="meta"><span>Camera 4.8</span><span>Battery 4.9</span></div></article>
-        <article class="product-card"><h3>iPhone 4S</h3><span class="chip">Apple • 2011</span><div class="meta"><span>Camera 5.4</span><span>Battery 5.0</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S II</h3><span class="chip">Samsung • 2011</span><div class="meta"><span>Camera 5.2</span><span>Battery 5.2</span></div></article>
-        <article class="product-card"><h3>iPhone 5</h3><span class="chip">Apple • 2012</span><div class="meta"><span>Camera 5.8</span><span>Battery 5.3</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S III</h3><span class="chip">Samsung • 2012</span><div class="meta"><span>Camera 5.7</span><span>Battery 5.5</span></div></article>
-        <article class="product-card"><h3>iPhone 5S</h3><span class="chip">Apple • 2013</span><div class="meta"><span>Camera 6.0</span><span>Battery 5.5</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S4</h3><span class="chip">Samsung • 2013</span><div class="meta"><span>Camera 6.1</span><span>Battery 5.8</span></div></article>
-        <article class="product-card"><h3>iPhone 6</h3><span class="chip">Apple • 2014</span><div class="meta"><span>Camera 6.4</span><span>Battery 5.8</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S5</h3><span class="chip">Samsung • 2014</span><div class="meta"><span>Camera 6.3</span><span>Battery 6.0</span></div></article>
-        <article class="product-card"><h3>iPhone 6S</h3><span class="chip">Apple • 2015</span><div class="meta"><span>Camera 6.8</span><span>Battery 6.0</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S6</h3><span class="chip">Samsung • 2015</span><div class="meta"><span>Camera 6.9</span><span>Battery 6.2</span></div></article>
-        <article class="product-card"><h3>iPhone 7</h3><span class="chip">Apple • 2016</span><div class="meta"><span>Camera 7.1</span><span>Battery 6.2</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S7</h3><span class="chip">Samsung • 2016</span><div class="meta"><span>Camera 7.2</span><span>Battery 6.5</span></div></article>
-        <article class="product-card"><h3>iPhone 8</h3><span class="chip">Apple • 2017</span><div class="meta"><span>Camera 7.4</span><span>Battery 6.5</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S8</h3><span class="chip">Samsung • 2017</span><div class="meta"><span>Camera 7.5</span><span>Battery 6.7</span></div></article>
-        <article class="product-card"><h3>iPhone XS</h3><span class="chip">Apple • 2018</span><div class="meta"><span>Camera 7.8</span><span>Battery 6.8</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S9</h3><span class="chip">Samsung • 2018</span><div class="meta"><span>Camera 7.9</span><span>Battery 7.0</span></div></article>
-        <article class="product-card"><h3>iPhone 11</h3><span class="chip">Apple • 2019</span><div class="meta"><span>Camera 8.2</span><span>Battery 7.2</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S10</h3><span class="chip">Samsung • 2019</span><div class="meta"><span>Camera 8.3</span><span>Battery 7.4</span></div></article>
-        <article class="product-card"><h3>iPhone 12</h3><span class="chip">Apple • 2020</span><div class="meta"><span>Camera 8.5</span><span>Battery 7.4</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S20</h3><span class="chip">Samsung • 2020</span><div class="meta"><span>Camera 8.6</span><span>Battery 7.7</span></div></article>
-        <article class="product-card"><h3>iPhone 13</h3><span class="chip">Apple • 2021</span><div class="meta"><span>Camera 8.8</span><span>Battery 7.8</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S21</h3><span class="chip">Samsung • 2021</span><div class="meta"><span>Camera 8.8</span><span>Battery 8.0</span></div></article>
-        <article class="product-card"><h3>iPhone 14</h3><span class="chip">Apple • 2022</span><div class="meta"><span>Camera 9.0</span><span>Battery 8.0</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S22</h3><span class="chip">Samsung • 2022</span><div class="meta"><span>Camera 9.0</span><span>Battery 8.1</span></div></article>
-        <article class="product-card"><h3>iPhone 15</h3><span class="chip">Apple • 2023</span><div class="meta"><span>Camera 9.2</span><span>Battery 8.3</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S23</h3><span class="chip">Samsung • 2023</span><div class="meta"><span>Camera 9.1</span><span>Battery 8.4</span></div></article>
-        <article class="product-card"><h3>iPhone 16</h3><span class="chip">Apple • 2024</span><div class="meta"><span>Camera 9.4</span><span>Battery 8.5</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S24</h3><span class="chip">Samsung • 2024</span><div class="meta"><span>Camera 9.3</span><span>Battery 8.6</span></div></article>
-        <article class="product-card"><h3>iPhone 17</h3><span class="chip">Apple • 2025</span><div class="meta"><span>Camera 9.6</span><span>Battery 8.7</span></div></article>
-        <article class="product-card"><h3>Samsung Galaxy S25</h3><span class="chip">Samsung • 2025</span><div class="meta"><span>Camera 9.5</span><span>Battery 8.8</span></div></article>
-      </section>
-    </main>
-  </div>
+      <div class="filter-grid">
+        <div class="filter-field">
+          <label for="search-input">Search Model</label>
+          <input id="search-input" type="text" placeholder="Search iPhone 15, Galaxy S24, ...">
+        </div>
+        <div class="filter-field">
+          <label for="brand-filter">Brand</label>
+          <select id="brand-filter">
+            <option value="all">All Brands</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="year-filter">Year</label>
+          <select id="year-filter">
+            <option value="all">All Years</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="sort-filter">Sort By</label>
+          <select id="sort-filter">
+            <option value="year-desc">Newest First</option>
+            <option value="year-asc">Oldest First</option>
+            <option value="price-desc">Highest Price</option>
+            <option value="price-asc">Lowest Price</option>
+            <option value="performance-desc">Best Performance</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-table">
+      <div class="data-toolbar">
+        <div>
+          <h3>Phone Cards</h3>
+          <p>Each card includes model, brand, year, price, camera, battery, and performance.</p>
+        </div>
+      </div>
+      <div id="products-grid" class="phone-grid"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/phones-data.js?v=clean14"></script>
+  <script src="assets/js/products.js?v=clean14"></script>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advice</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
+</head>
+<body class="site-page">
+  <main class="site-shell">
+    <section class="site-hero">
+      <div>
+        <span class="site-kicker">Advice</span>
+        <h1>Let users describe what kind of phone they need and receive quick guidance.</h1>
+        <p>
+          This page provides a practical advisory UI for people who want help with gaming, camera,
+          budget, battery life, or everyday use before they run the full DSS evaluation.
+        </p>
+      </div>
+      <div class="site-visual-stack">
+        <article class="hero-visual-card">
+          <span class="site-kicker">User Support</span>
+          <strong>Question -> Suggestion -> Next Step</strong>
+          <p>Quick prompts and a smart response area guide the user toward the best phone choice.</p>
+          <div class="mini-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="site-content-grid">
+      <div class="site-main-column">
+        <article class="site-card">
+          <h3>User Question Input</h3>
+          <p>Type a request such as "best camera phone under $800" or "good battery for daily use".</p>
+          <div class="filter-field" style="margin-top: 18px;">
+            <label for="advice-input">Your Message</label>
+            <textarea id="advice-input" placeholder="I want a phone with strong battery and good camera under $900..."></textarea>
+          </div>
+          <div class="site-hero-actions" style="margin-top: 18px;">
+            <button id="advice-submit" class="site-link-btn primary" type="button">Get Advice</button>
+            <a href="dss.html" class="site-link-btn subtle">Go to DSS Evaluation</a>
+          </div>
+        </article>
+
+        <article class="site-card">
+          <h3>Quick Prompts</h3>
+          <p>Choose a common question to fill the input instantly.</p>
+          <div class="advice-prompts">
+            <button class="prompt-chip" type="button" data-prompt="Best phone for gaming with strong performance">Best phone for gaming</button>
+            <button class="prompt-chip" type="button" data-prompt="Best camera phone under $800">Best camera under $800</button>
+            <button class="prompt-chip" type="button" data-prompt="Best battery phone for everyday use">Best battery phone</button>
+            <button class="prompt-chip" type="button" data-prompt="Should I choose iPhone or Samsung for long-term use?">iPhone or Samsung?</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="site-side-column">
+        <article class="site-panel">
+          <h3>Recommendation Response UI</h3>
+          <div class="advice-response">
+            <div id="advice-response" class="response-bubble">
+              Write your question or tap a quick prompt to receive a recommendation-style response.
+            </div>
+            <div id="advice-next-step" class="response-bubble">
+              After reading the advice, users can continue to the DSS page for a more detailed ranking.
+            </div>
+          </div>
+        </article>
+
+        <article class="site-sidebar-card">
+          <h3>Useful Tip</h3>
+          <p>
+            This page works best as a friendly helper before the user enters formal weights in the
+            DSS Evaluation page.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/ask-advice.js?v=clean14"></script>
+</body>
+</html>

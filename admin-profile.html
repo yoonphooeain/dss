@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Profile</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
+</head>
+<body class="profile-light-page">
+  <main class="profile-light-shell">
+    <section class="profile-toolbar">
+      <div class="profile-search">
+        <span>Search</span>
+      </div>
+      <div class="profile-toolbar-date" id="profile-toolbar-date">Tuesday, 18 July</div>
+      <div class="profile-toolbar-icons">
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="profile-page-title">
+      <h1>My Profile</h1>
+    </section>
+
+    <section class="profile-hero-card">
+      <div class="profile-hero-avatar">
+        <img src="assets/images/dashboard-profile-v2.png?v=clean14" alt="Admin">
+        <span class="profile-avatar-badge"></span>
+      </div>
+      <div class="profile-hero-copy">
+        <h2 id="admin-user-name">PhoneDSS Admin</h2>
+        <p>Admin</p>
+        <span id="admin-user-email">Research Workspace</span>
+      </div>
+    </section>
+
+    <section class="profile-info-card">
+      <div class="profile-card-head">
+        <h3>Personal Information</h3>
+        <div class="profile-card-actions">
+          <button type="button" id="profile-edit-personal-btn">Edit</button>
+          <button type="button" id="profile-save-personal-btn" class="profile-save-btn" hidden>Save</button>
+          <button type="button" id="profile-cancel-personal-btn" class="profile-cancel-btn" hidden>Cancel</button>
+        </div>
+      </div>
+      <div class="profile-info-grid" id="profile-personal-grid">
+        <div>
+          <span>First Name</span>
+          <strong id="profile-first-name">Phone</strong>
+          <input id="profile-first-name-input" class="profile-edit-input" type="text" value="Phone" hidden>
+        </div>
+        <div>
+          <span>Last Name</span>
+          <strong id="profile-last-name">Admin</strong>
+          <input id="profile-last-name-input" class="profile-edit-input" type="text" value="Admin" hidden>
+        </div>
+        <div>
+          <span>Date of Birth</span>
+          <strong id="profile-dob">12-10-1990</strong>
+          <input id="profile-dob-input" class="profile-edit-input" type="text" value="12-10-1990" hidden>
+        </div>
+        <div>
+          <span>Email Address</span>
+          <strong id="profile-email">info@phonedss.com</strong>
+          <input id="profile-email-input" class="profile-edit-input" type="email" value="info@phonedss.com" hidden>
+        </div>
+        <div>
+          <span>Phone Number</span>
+          <strong id="profile-phone">(+95) 09 123 456 789</strong>
+          <input id="profile-phone-input" class="profile-edit-input" type="text" value="(+95) 09 123 456 789" hidden>
+        </div>
+        <div>
+          <span>User Role</span>
+          <strong id="profile-role">Admin</strong>
+          <input id="profile-role-input" class="profile-edit-input" type="text" value="Admin" hidden>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-info-card">
+      <div class="profile-card-head">
+        <h3>Address</h3>
+        <div class="profile-card-actions">
+          <button type="button" id="profile-edit-address-btn">Edit</button>
+          <button type="button" id="profile-save-address-btn" class="profile-save-btn" hidden>Save</button>
+          <button type="button" id="profile-cancel-address-btn" class="profile-cancel-btn" hidden>Cancel</button>
+        </div>
+      </div>
+      <div class="profile-info-grid profile-address-grid">
+        <div>
+          <span>Country</span>
+          <strong id="profile-country">Myanmar</strong>
+          <input id="profile-country-input" class="profile-edit-input" type="text" value="Myanmar" hidden>
+        </div>
+        <div>
+          <span>City</span>
+          <strong id="profile-city">Yangon</strong>
+          <input id="profile-city-input" class="profile-edit-input" type="text" value="Yangon" hidden>
+        </div>
+        <div>
+          <span>Postal Code</span>
+          <strong id="profile-postal">11081</strong>
+          <input id="profile-postal-input" class="profile-edit-input" type="text" value="11081" hidden>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/admin-profile.js?v=clean14"></script>
+</body>
+</html>

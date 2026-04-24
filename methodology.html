@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
+</head>
+<body class="site-page">
+  <main class="site-shell">
+    <section class="site-hero">
+      <div>
+        <span class="site-kicker">Methodology</span>
+        <h1>The website applies decision support theory to recommend the most suitable smartphone.</h1>
+        <p>
+          This system is based on Decision Support System theory, multi-criteria evaluation,
+          and weighted utility scoring. User preferences are converted into measurable weights,
+          then each phone alternative is evaluated and ranked.
+        </p>
+      </div>
+      <div class="site-visual-stack">
+        <article class="hero-visual-card">
+          <span class="site-kicker">Core Formula</span>
+          <strong>
+            Score = (Price x Wp) + (Camera x Wc) + (Battery x Wb) + (Performance x Wf)
+          </strong>
+          <p>
+            Each criterion contributes to the total utility score according to the user-defined
+            importance weight.
+          </p>
+        </article>
+        <article class="site-card">
+          <h3>Research Goal</h3>
+          <p>
+            To help users choose the best smartphone by comparing alternatives across several
+            criteria rather than relying only on brand preference or price.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="insight-grid">
+      <article class="site-card">
+        <h3>Decision Support System</h3>
+        <p>
+          A Decision Support System is an information system that supports users in making
+          semi-structured decisions. In this project, the DSS assists users by organizing phone
+          data, applying evaluation rules, and producing recommendation results.
+        </p>
+      </article>
+      <article class="site-card">
+        <h3>Multi-Criteria Decision Making</h3>
+        <p>
+          Smartphone selection is a multi-criteria problem because users consider more than one
+          factor at the same time. Price, camera, battery, and performance must be evaluated together.
+        </p>
+      </article>
+      <article class="site-card">
+        <h3>Utility-Based Ranking</h3>
+        <p>
+          Utility theory is used to convert different phone attributes into one comparable value.
+          The model with the highest final utility score becomes the recommended alternative.
+        </p>
+      </article>
+    </section>
+
+    <section class="site-content-grid">
+      <div class="site-main-column">
+        <article class="site-card">
+          <span class="site-kicker">Theoretical Foundation</span>
+          <h3>1. Decision Theory</h3>
+          <p>
+            Decision theory explains how a person can choose the best option among many alternatives.
+            In this website, each smartphone is treated as an alternative and each phone feature is
+            treated as an evaluation criterion.
+          </p>
+          <p>
+            A good decision model should reduce uncertainty, organize information clearly, and provide
+            a rational basis for choosing one option over another. The DSS performs this role by
+            transforming user needs into a ranked recommendation.
+          </p>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Criteria Theory</span>
+          <h3>2. Evaluation Criteria</h3>
+          <div class="metric-row">
+            <div>
+              <strong>Price</strong>
+              <p>
+                Represents the economic cost of the phone. It is an important factor because many
+                users make decisions within a limited budget.
+              </p>
+            </div>
+            <div>
+              <strong>Camera</strong>
+              <p>
+                Reflects image and video capability. This criterion is important for users who
+                prioritize photography, content creation, or social media usage.
+              </p>
+            </div>
+            <div>
+              <strong>Battery</strong>
+              <p>
+                Measures power endurance and practical daily usage. A higher battery score means
+                better long-term use without frequent charging.
+              </p>
+            </div>
+            <div>
+              <strong>Performance</strong>
+              <p>
+                Represents processing speed, responsiveness, and ability to handle demanding tasks
+                such as gaming, multitasking, and productivity work.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Scoring Model</span>
+          <h3>3. Weighted Sum Model</h3>
+          <p>
+            The website uses the Weighted Sum Model because it is simple, explainable, and suitable
+            for ranking alternatives across several criteria. Each phone receives a final score based
+            on the sum of its weighted criterion values.
+          </p>
+          <p>
+            The formula used in the system is:
+          </p>
+          <strong>
+            Score = (Price x Price Weight) + (Camera x Camera Weight) + (Battery x Battery Weight)
+            + (Performance x Performance Weight)
+          </strong>
+          <p>
+            After calculating the total score for every selected model, the phones are sorted in
+            descending order. The highest score is interpreted as the best recommendation.
+          </p>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Preference Theory</span>
+          <h3>4. User-Defined Weights</h3>
+          <p>
+            Different users have different priorities. Some users prefer a lower price, while others
+            want the best camera or strongest performance. Therefore, the model allows the user to
+            assign weights to each criterion.
+          </p>
+          <p>
+            Weights represent importance. A higher weight means the user values that criterion more.
+            This makes the recommendation personalized rather than fixed for everyone.
+          </p>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Data Handling</span>
+          <h3>5. Dataset and Attribute Representation</h3>
+          <p>
+            The system dataset contains iPhone and Samsung smartphone models from 2010 to 2025.
+            Each record contains the model name, brand, year, price, camera score, battery score,
+            and performance score.
+          </p>
+          <p>
+            These attributes are used as structured decision variables. Organizing the data in JSON
+            format makes the system easy to update, process, and integrate with the web interface
+            and Flask API.
+          </p>
+        </article>
+      </div>
+
+      <div class="site-side-column">
+        <article class="site-card">
+          <span class="site-kicker">Process Flow</span>
+          <h3>6. System Procedure</h3>
+          <p>Step 1. The user views the available smartphone dataset.</p>
+          <p>Step 2. The user selects or considers one or more smartphone models.</p>
+          <p>Step 3. The user enters preference weights for price, camera, battery, and performance.</p>
+          <p>Step 4. The system calculates a utility score for each model.</p>
+          <p>Step 5. The system ranks all alternatives from highest to lowest.</p>
+          <p>Step 6. The system presents the winner and recommendation summary.</p>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Interpretation</span>
+          <h3>7. Ranking Output</h3>
+          <p>
+            The ranking list helps users compare all evaluated phones, not only the winner. This
+            improves transparency because the user can see how close or far each alternative is
+            from the top recommendation.
+          </p>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Normalization Idea</span>
+          <h3>8. Comparative Measurement</h3>
+          <p>
+            In decision analysis, criteria often come from different value ranges. Even when a simple
+            scoring model is used, the theoretical purpose is to bring different attributes into a
+            comparable decision space so they can contribute to one overall result.
+          </p>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Recommendation Logic</span>
+          <h3>9. Why the Winner Is Chosen</h3>
+          <p>
+            The recommended phone is the alternative with the highest total weighted score. This means
+            it offers the strongest overall balance according to the user's own priorities.
+          </p>
+        </article>
+
+        <article class="site-card">
+          <span class="site-kicker">Academic Value</span>
+          <h3>10. Research Contribution</h3>
+          <p>
+            This project demonstrates how DSS concepts can be applied to a real consumer problem.
+            It shows that structured evaluation can improve smartphone purchasing decisions by making
+            the recommendation process more objective, transparent, and personalized.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="insight-grid">
+      <article class="site-card">
+        <h3>Input</h3>
+        <p>
+          Phone dataset and user-defined weights are entered into the system as decision inputs.
+        </p>
+      </article>
+      <article class="site-card">
+        <h3>Process</h3>
+        <p>
+          Weighted scoring, ranking, and comparison are applied to evaluate all selected alternatives.
+        </p>
+      </article>
+      <article class="site-card">
+        <h3>Output</h3>
+        <p>
+          The final output includes utility scores, ranking order, winner result, and recommendation advice.
+        </p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
