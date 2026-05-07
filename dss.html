@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DSS Evaluation</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
+  <link rel="stylesheet" href="assets/css/style.css?v=liveui18">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="site-page">
   <main class="site-shell">
@@ -41,35 +42,79 @@
 
     <section class="site-content-grid">
       <div class="site-main-column">
-        <form id="dss-form" class="site-card">
+        <form id="dss-form" class="site-card dss-live-card">
           <h3>Decision Inputs</h3>
-          <p>Select the phones you want to evaluate and enter preference weights for each criterion.</p>
+          <p>Choose phones and assign weights for six DSS criteria. Each criterion value is scored from 0 to 10, then the final score is calculated with a weighted sum model.</p>
 
-          <div class="weight-grid">
-            <div class="filter-field">
-              <label for="price_weight">Price Weight</label>
-              <input id="price_weight" type="number" step="0.01" value="0.01">
+          <div class="dss-summary-strip">
+            <div class="dss-summary-box">
+              <span>Selected Phones</span>
+              <strong id="selected-phone-count">0</strong>
             </div>
-            <div class="filter-field">
-              <label for="camera_weight">Camera Weight</label>
-              <input id="camera_weight" type="number" step="0.01" value="0.25">
+            <div class="dss-summary-box">
+              <span>Total Weight</span>
+              <strong id="live-total-weight">1.00</strong>
             </div>
-            <div class="filter-field">
-              <label for="battery_weight">Battery Weight</label>
-              <input id="battery_weight" type="number" step="0.01" value="0.25">
-            </div>
-            <div class="filter-field">
-              <label for="performance_weight">Performance Weight</label>
-              <input id="performance_weight" type="number" step="0.01" value="0.25">
+            <div class="dss-summary-box">
+              <span>Live Best Match</span>
+              <strong id="live-best-match">Awaiting input</strong>
             </div>
           </div>
 
+          <div class="weight-grid dss-slider-grid">
+            <div class="filter-field">
+              <label for="price_weight">Price Weight</label>
+              <input id="price_weight" type="range" min="0" max="1" step="0.01" value="0.15">
+              <small><span id="price_weight_value">0.15</span> • affordability score</small>
+            </div>
+            <div class="filter-field">
+              <label for="performance_weight">Performance Weight</label>
+              <input id="performance_weight" type="range" min="0" max="1" step="0.01" value="0.2">
+              <small><span id="performance_weight_value">0.20</span> • processing speed</small>
+            </div>
+            <div class="filter-field">
+              <label for="camera_weight">Camera Weight</label>
+              <input id="camera_weight" type="range" min="0" max="1" step="0.01" value="0.2">
+              <small><span id="camera_weight_value">0.20</span> • photo and video quality</small>
+            </div>
+            <div class="filter-field">
+              <label for="battery_weight">Battery Weight</label>
+              <input id="battery_weight" type="range" min="0" max="1" step="0.01" value="0.15">
+              <small><span id="battery_weight_value">0.15</span> • battery endurance</small>
+            </div>
+            <div class="filter-field">
+              <label for="display_weight">Display Weight</label>
+              <input id="display_weight" type="range" min="0" max="1" step="0.01" value="0.15">
+              <small><span id="display_weight_value">0.15</span> • brightness and smoothness</small>
+            </div>
+            <div class="filter-field">
+              <label for="software_support_weight">Software Support Weight</label>
+              <input id="software_support_weight" type="range" min="0" max="1" step="0.01" value="0.15">
+              <small><span id="software_support_weight_value">0.15</span> • updates and long-term support</small>
+            </div>
+          </div>
+
+          <div class="site-note" id="weight-summary-note" style="margin-top: 14px;">
+            Total weight: 1.00. The system uses Score = sum(weight × value).
+          </div>
+
+          <div class="site-sidebar-card" style="margin-top: 18px;">
+            <h3>How Scoring Works</h3>
+            <div class="explanation-box">
+              Final Score = (Price × W1) + (Performance × W2) + (Camera × W3) + (Battery × W4) + (Display × W5) + (Software Support × W6)
+            </div>
+            <p class="site-note" style="margin-top: 10px;">
+              Each phone has a criterion score from 0 to 10. A higher final score means a better overall match for the selected weights.
+            </p>
+          </div>
+
           <h3 style="margin-top: 24px;">Selected Phones</h3>
-          <p class="site-note">Choose at least two phones to compare. The system can also evaluate all phones if none are selected.</p>
+          <p class="site-note">This DSS dataset contains the full iPhone and Samsung model list with six criteria used for weighted scoring.</p>
           <div id="selection-grid" class="selection-grid"></div>
 
-          <div class="site-hero-actions" style="margin-top: 22px;">
-            <button class="site-link-btn primary" type="submit">Calculate Scores</button>
+          <div class="site-hero-actions dss-live-actions" style="margin-top: 22px;">
+            <button class="site-link-btn primary" type="submit">Refresh Scores</button>
+            <button class="site-link-btn subtle" type="button" id="reset-balanced-weights">Reset Balanced Weights</button>
             <a href="results.html" class="site-link-btn subtle">Open Recommendation Page</a>
           </div>
         </form>
@@ -84,6 +129,26 @@
           <div id="ranking-list" class="result-stack">
             <div class="table-empty">Run the DSS calculation to see the ranking list.</div>
           </div>
+        </section>
+
+        <section class="chart-panel-grid dss-chart-grid">
+          <article class="site-card">
+            <span class="site-kicker">Comparison</span>
+            <h3>Total Score Chart</h3>
+            <p>Bar chart showing the total weighted score for each selected phone.</p>
+            <div class="chart-canvas-wrap dss-chart-wrap">
+              <canvas id="dssScoreBarChart"></canvas>
+            </div>
+          </article>
+
+          <article class="site-card">
+            <span class="site-kicker">Criteria</span>
+            <h3>Criteria Radar Chart</h3>
+            <p>Radar chart comparing the top two phones across the six criteria.</p>
+            <div class="chart-canvas-wrap dss-chart-wrap">
+              <canvas id="dssCriteriaRadarChart"></canvas>
+            </div>
+          </article>
         </section>
       </div>
 
@@ -118,7 +183,7 @@
     </section>
   </main>
 
-  <script src="assets/js/phones-data.js?v=live15"></script>
-  <script src="assets/js/dss.js?v=live15"></script>
+  <script src="assets/js/phones-data.js?v=liveui18"></script>
+  <script src="assets/js/dss.js?v=liveui18"></script>
 </body>
 </html>

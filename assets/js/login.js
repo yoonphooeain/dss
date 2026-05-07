@@ -1,5 +1,10 @@
 const loginForm = document.getElementById("login-form");
 const AUTH_KEY = "phonedssAuthenticated";
+const USER_KEY = "phonedssUser";
+
+if (sessionStorage.getItem(AUTH_KEY) === "true" && localStorage.getItem(USER_KEY)) {
+  window.location.href = "dashboard.html?v=flow19";
+}
 
 if (loginForm) {
   loginForm.addEventListener("submit", (event) => {
@@ -11,7 +16,7 @@ if (loginForm) {
     const displayName = nameFromEmail.replace(/\b\w/g, (char) => char.toUpperCase()) || "Guest User";
 
     localStorage.setItem(
-      "phonedssUser",
+      USER_KEY,
       JSON.stringify({
         email,
         remember,
@@ -20,6 +25,6 @@ if (loginForm) {
     );
 
     sessionStorage.setItem(AUTH_KEY, "true");
-    window.location.href = "dashboard.html?v=flow13";
+    window.location.href = "dashboard.html?v=flow19";
   });
 }

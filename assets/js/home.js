@@ -1,8 +1,8 @@
 const USER_KEY = "phonedssUser";
 const AUTH_KEY = "phonedssAuthenticated";
-const LOGIN_URL = "login.html?v=flow13";
-const DASHBOARD_URL = "dashboard.html?v=flow13";
-const ADMIN_PROFILE_URL = "admin-profile.html?v=flow13";
+const LOGIN_URL = "login.html?v=flow19";
+const DASHBOARD_URL = "dashboard.html?v=flow19";
+const ADMIN_PROFILE_URL = "admin-profile.html?v=flow19";
 const EVALUATION_URL = "dss.html";
 const RECOMMENDATION_URL = "results.html";
 
@@ -12,6 +12,7 @@ const homePrimaryGate = document.getElementById("home-primary-gate");
 const homeDashboardLink = document.getElementById("home-dashboard-link");
 const homeEvaluationLink = document.getElementById("home-evaluation-link");
 const homeRecommendationLink = document.getElementById("home-recommendation-link");
+const homeDssLink = document.getElementById("home-dss-link");
 
 function isAuthenticated() {
   return sessionStorage.getItem(AUTH_KEY) === "true";
@@ -44,6 +45,7 @@ try {
   setHref(homeDashboardLink, DASHBOARD_URL);
   setHref(homeEvaluationLink, EVALUATION_URL);
   setHref(homeRecommendationLink, RECOMMENDATION_URL);
+  setHref(homeDssLink, EVALUATION_URL);
 
   if (homePrimaryGate) {
     homePrimaryGate.textContent = loggedIn ? "Open Dashboard" : "Login to Dashboard";
@@ -84,4 +86,5 @@ try {
   setHref(homeDashboardLink, DASHBOARD_URL);
   setHref(homeEvaluationLink, EVALUATION_URL);
   setHref(homeRecommendationLink, RECOMMENDATION_URL);
+  setHref(homeDssLink, EVALUATION_URL);
 }

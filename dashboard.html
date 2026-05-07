@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=clean16">
+  <link rel="stylesheet" href="assets/css/style.css?v=flow19">
 </head>
 <body class="dashboard-glass-page">
   <div class="dashboard-glass-overlay"></div>
 
   <main class="dashboard-shell">
     <aside class="dashboard-sidebar">
-      <a href="admin-profile.html?v=flow13" class="dashboard-profile">
-        <img src="assets/images/dashboard-profile-v2.png?v=flow13" alt="Profile">
+      <a href="admin-profile.html?v=flow19" class="dashboard-profile">
+        <img src="assets/images/dashboard-profile-v2.png?v=flow19" alt="Profile">
         <div>
           <span class="dashboard-role">Admin</span>
           <h2 id="dashboard-user-name">PhoneDSS User</h2>
@@ -21,12 +21,11 @@
       </a>
 
       <nav class="dashboard-menu">
-        <a href="dashboard.html?v=clean16" class="active">Overview</a>
+        <a href="dashboard.html?v=flow18" class="active">Overview</a>
         <a href="products.html">Products</a>
         <a href="dss.html">DSS Evaluation</a>
         <a href="results.html">Recommendation</a>
         <a href="analytics.html">Analytics</a>
-        <a href="ask-advice.html">Advice</a>
         <a href="index.html">Back Home</a>
         <a href="index.html" id="dashboard-logout-btn">Logout</a>
       </nav>
@@ -42,23 +41,23 @@
 
         <article class="dashboard-glass-card donut-card">
           <small>Saved Evaluations</small>
-          <strong>24</strong>
+          <strong id="dashboard-saved-count">0</strong>
           <div class="dashboard-progress">
-            <div class="dashboard-progress-ring">68%</div>
+            <div class="dashboard-progress-ring" id="dashboard-progress-ring">Ready</div>
           </div>
           <div class="dashboard-progress-meta">
-            <span>Daily use 80</span>
-            <span>Camera 40</span>
+            <span id="dashboard-progress-meta-one">No run yet</span>
+            <span id="dashboard-progress-meta-two">Live charts ready</span>
           </div>
         </article>
 
         <article class="dashboard-glass-card transaction-card">
           <small>Recent Recommendation</small>
-          <strong>iPhone 15 Pro</strong>
+          <strong id="dashboard-latest-winner">No result yet</strong>
           <div class="dashboard-mini-list">
-            <div><span>Score</span><em>8.91</em></div>
-            <div><span>Runner-up</span><em>Galaxy S24 Ultra</em></div>
-            <div><span>Main reason</span><em>Balanced camera and performance</em></div>
+            <div><span>Score</span><em id="dashboard-latest-score">Run DSS first</em></div>
+            <div><span>Runner-up</span><em id="dashboard-latest-runnerup">Waiting</em></div>
+            <div><span>Main reason</span><em id="dashboard-latest-reason">No explanation yet</em></div>
           </div>
         </article>
 
@@ -94,7 +93,7 @@
 
         <article class="dashboard-glass-card insights-card">
           <small>Criteria Summary</small>
-          <strong>Price, Camera, Battery, Performance</strong>
+          <strong>Price, Performance, Camera, Battery, Display, Software</strong>
           <div class="dashboard-bars chart-blue"></div>
         </article>
 
@@ -111,8 +110,8 @@
         </article>
 
         <article class="dashboard-glass-card recent-list-card">
-          <small>Advice Topics</small>
-          <strong>Recent Searches</strong>
+          <small>Recent Evaluation Themes</small>
+          <strong>Latest Preference Focus</strong>
           <div class="dashboard-recent-list">
             <div><span>Camera Priority</span><em>High</em></div>
             <div><span>Budget Comparison</span><em>Under $800</em></div>
@@ -124,6 +123,6 @@
     </section>
   </main>
 
-  <script src="assets/js/dashboard.js?v=clean16"></script>
+  <script src="assets/js/dashboard.js?v=flow19"></script>
 </body>
 </html>

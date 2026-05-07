@@ -5,7 +5,7 @@ const searchInput = document.getElementById("search-input");
 const brandFilter = document.getElementById("brand-filter");
 const yearFilter = document.getElementById("year-filter");
 const sortFilter = document.getElementById("sort-filter");
-const IMAGE_VERSION = "clean14";
+const IMAGE_VERSION = "flow19";
 
 function populateYearFilter() {
   if (!yearFilter) return;
@@ -43,10 +43,12 @@ function renderProducts(items) {
             <h3>${phone.model}</h3>
             <span class="tag">${phone.brand} • ${phone.year}</span>
             <div class="phone-meta-grid">
-              <span><strong>Price</strong><br>$${phone.price}</span>
+              <span><strong>Price</strong><br>${phone.price_score ?? phone.price}</span>
+              <span><strong>Performance</strong><br>${phone.performance_score}</span>
               <span><strong>Camera</strong><br>${phone.camera_score}</span>
               <span><strong>Battery</strong><br>${phone.battery_score}</span>
-              <span><strong>Performance</strong><br>${phone.performance_score}</span>
+              <span><strong>Display</strong><br>${phone.display_score ?? "-"}</span>
+              <span><strong>Software</strong><br>${phone.software_support_score ?? phone.software_score ?? "-"}</span>
             </div>
           </div>
         </article>

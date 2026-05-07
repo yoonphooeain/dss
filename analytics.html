@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analytics</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=clean14">
+  <link rel="stylesheet" href="assets/css/style.css?v=flow20">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="site-page">
@@ -20,7 +20,7 @@
         <div class="hero-tags">
           <span class="tag">Brand comparison</span>
           <span class="tag">Trend over years</span>
-          <span class="tag">Distribution</span>
+          <span class="tag">Winner explanation</span>
         </div>
         <p id="analytics-live-note" class="site-note">
           Run DSS Evaluation first to update these charts with your latest weights and ranking.
@@ -30,8 +30,8 @@
       <div class="site-visual-stack">
         <article class="hero-visual-card">
           <span class="site-kicker">Chart Summary</span>
-          <strong id="analytics-summary-title">Bar + Line + Doughnut</strong>
-          <p id="analytics-summary-copy">Clean visuals make the recommendation easier to explain in a thesis demo.</p>
+          <strong id="analytics-summary-title">Live DSS Insight Board</strong>
+          <p id="analytics-summary-copy">Clean visuals turn raw weighted scores into a thesis-ready explanation.</p>
           <div class="mini-bars">
             <span></span>
             <span></span>
@@ -43,11 +43,38 @@
       </div>
     </section>
 
+    <section class="analytics-summary-grid">
+      <article class="site-metric analytics-live-state" id="analytics-live-state">
+        <span class="site-kicker">Run State</span>
+        <h3 id="analytics-live-state-title">Waiting for DSS Result</h3>
+        <p id="analytics-live-state-copy">Open DSS Evaluation, choose phones, adjust the sliders, and return here for live charts.</p>
+        <a class="ghost-button analytics-inline-button" href="dss.html">Open DSS Evaluation</a>
+      </article>
+
+      <article class="site-metric">
+        <span class="site-kicker">Latest Winner</span>
+        <h3 id="analytics-metric-winner">Waiting</h3>
+        <p id="analytics-metric-winner-copy">No live recommendation yet.</p>
+      </article>
+
+      <article class="site-metric">
+        <span class="site-kicker">Runner-up Gap</span>
+        <h3 id="analytics-metric-gap">0.00</h3>
+        <p id="analytics-metric-gap-copy">The score gap appears after a DSS run.</p>
+      </article>
+
+      <article class="site-metric">
+        <span class="site-kicker">Preference Focus</span>
+        <h3 id="analytics-metric-focus">Balanced</h3>
+        <p id="analytics-metric-focus-copy">Top user weights will appear here.</p>
+      </article>
+    </section>
+
     <section class="chart-panel-grid">
       <article class="site-card">
         <span class="site-kicker">Comparison</span>
         <h3>Brand Comparison</h3>
-        <p>Average research score by brand.</p>
+        <p id="analytics-brand-copy">Average weighted score by brand from the latest DSS calculation.</p>
         <div class="chart-canvas-wrap">
           <canvas id="brandBarChart"></canvas>
         </div>
@@ -56,7 +83,7 @@
       <article class="site-card">
         <span class="site-kicker">Trend</span>
         <h3>Trend Over Years</h3>
-        <p>Performance growth pattern for iPhone and Samsung.</p>
+        <p id="analytics-trend-copy">Weighted score trend across selected model years for Apple and Samsung.</p>
         <div class="chart-canvas-wrap">
           <canvas id="trendLineChart"></canvas>
         </div>
@@ -65,9 +92,27 @@
       <article class="site-card">
         <span class="site-kicker">Distribution</span>
         <h3>Score Distribution</h3>
-        <p>Overall split of device groups in the dataset.</p>
+        <p id="analytics-distribution-copy">Ranking split of top, middle, and lower scored phones.</p>
         <div class="chart-canvas-wrap">
           <canvas id="distributionPieChart"></canvas>
+        </div>
+      </article>
+
+      <article class="site-card">
+        <span class="site-kicker">Head-to-Head</span>
+        <h3>Winner vs Runner-up</h3>
+        <p id="analytics-radar-copy">Criterion-level comparison of the strongest two phones in the latest run.</p>
+        <div class="chart-canvas-wrap">
+          <canvas id="winnerRadarChart"></canvas>
+        </div>
+      </article>
+
+      <article class="site-card analytics-wide-card">
+        <span class="site-kicker">Explanation</span>
+        <h3>Top Contributing Factors</h3>
+        <p id="analytics-factor-copy">Weighted contribution of the winning phone's most influential criteria.</p>
+        <div class="chart-canvas-wrap analytics-factor-wrap">
+          <canvas id="factorBarChart"></canvas>
         </div>
       </article>
     </section>
@@ -85,12 +130,12 @@
       </article>
       <article class="site-metric">
         <span class="site-kicker">Insight</span>
-        <h3 id="analytics-insight-three-title">Use Case</h3>
+        <h3 id="analytics-insight-three-title">Latest Run</h3>
         <p id="analytics-insight-three-copy">Charts support recommendation, but the final choice should still follow user preference weights.</p>
       </article>
     </section>
   </main>
 
-  <script src="assets/js/charts.js?v=live15"></script>
+  <script src="assets/js/charts.js?v=flow20"></script>
 </body>
 </html>
