@@ -9,7 +9,6 @@ from dss_scoring import calculate_scores
 BASE_DIR = Path(__file__).parent
 DATASET_PATH = BASE_DIR / "data" / "phones.json"
 WEIGHTED_DATASET_PATH = BASE_DIR / "data" / "weighted_phones.json"
-
 app = Flask(__name__)
 
 

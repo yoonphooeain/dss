@@ -12,17 +12,47 @@ const commonChartOptions = {
         color: chartText,
         boxWidth: 12,
         usePointStyle: true,
+        pointStyle: "circle",
+        padding: 18,
+        font: {
+          size: 12,
+          weight: "600",
+        },
       },
+    },
+    tooltip: {
+      backgroundColor: "rgba(11, 18, 32, 0.94)",
+      titleColor: "#f5fbff",
+      bodyColor: "#d7e4f5",
+      borderColor: "rgba(126, 241, 255, 0.16)",
+      borderWidth: 1,
+      padding: 12,
+      cornerRadius: 14,
+      displayColors: false,
     },
   },
   scales: {
     x: {
-      ticks: { color: chartMuted },
+      ticks: {
+        color: chartMuted,
+        font: {
+          size: 11,
+          weight: "600",
+        },
+      },
       grid: { color: chartGrid },
+      border: { display: false },
     },
     y: {
-      ticks: { color: chartMuted },
+      ticks: {
+        color: chartMuted,
+        font: {
+          size: 11,
+          weight: "600",
+        },
+      },
       grid: { color: chartGrid },
+      border: { display: false },
     },
   },
 };
@@ -37,6 +67,31 @@ const criteriaLabelMap = {
 };
 
 let analyticsCharts = [];
+
+function withAlpha(hex, alpha) {
+  const safe = hex.replace("#", "");
+  const bigint = Number.parseInt(safe, 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function verticalGradient(canvas, topColor, bottomColor) {
+  const ctx = canvas.getContext("2d");
+  const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height || 260);
+  gradient.addColorStop(0, topColor);
+  gradient.addColorStop(1, bottomColor);
+  return gradient;
+}
+
+function horizontalGradient(canvas, leftColor, rightColor) {
+  const ctx = canvas.getContext("2d");
+  const gradient = ctx.createLinearGradient(0, 0, canvas.width || 600, 0);
+  gradient.addColorStop(0, leftColor);
+  gradient.addColorStop(1, rightColor);
+  return gradient;
+}
 
 function createDashboardChart() {
   const dashboardCanvas = document.getElementById("dashboardChart");
@@ -106,7 +161,6 @@ function buildAnalyticsPayload() {
         average(scores.filter((item) => item.brand === brand && item.year === year).map((item) => item.score)).toFixed(2)
       )
     );
-
   const ranking = stored.ranking || [];
   const total = ranking.length || 1;
   const topCut = Math.max(1, Math.ceil(total / 3));
@@ -147,6 +201,14 @@ function buildAnalyticsPayload() {
     runnerGap,
     selectedCount: stored.selectedModels?.length || ranking.length,
     weightSummary,
+    topFiveLabels: ranking.slice(0, 5).map((item) => item.model),
+    topFiveScores: ranking.slice(0, 5).map((item) => Number(item.score.toFixed(2))),
+    priceScorePoints: scores.map((item) => ({
+      x: Number(item.price || 0),
+      y: Number(item.score || 0),
+      model: item.model,
+      brand: item.brand,
+    })),
     topContributions,
     generatedAt: stored.generatedAt,
   };
@@ -175,6 +237,8 @@ function updateAnalyticsText(payload) {
   const distributionCopy = document.getElementById("analytics-distribution-copy");
   const radarCopy = document.getElementById("analytics-radar-copy");
   const factorCopy = document.getElementById("analytics-factor-copy");
+  const topFiveCopy = document.getElementById("analytics-topfive-copy");
+  const priceScoreCopy = document.getElementById("analytics-price-score-copy");
 
   if (!payload) {
     if (liveNote) {
@@ -242,6 +306,12 @@ function updateAnalyticsText(payload) {
     }
     if (factorCopy) {
       factorCopy.textContent = "Weighted contribution of the winning phone's most influential criteria.";
+    }
+    if (topFiveCopy) {
+      topFiveCopy.textContent = "Highest-ranked smartphones from the latest DSS calculation.";
+    }
+    if (priceScoreCopy) {
+      priceScoreCopy.textContent = "Relationship between smartphone price and final weighted score.";
     }
     return;
   }
@@ -345,13 +415,23 @@ function updateAnalyticsText(payload) {
       ? `The winner is mainly driven by ${payload.topContributions.map((item) => item.label).join(", ")}.`
       : "Weighted contribution of the winning phone's most influential criteria.";
   }
+
+  if (topFiveCopy) {
+    topFiveCopy.textContent = `Top-ranked smartphones from the latest DSS run, ordered by final weighted score.`;
+  }
+
+  if (priceScoreCopy) {
+    priceScoreCopy.textContent = "Scatter view of how smartphone price aligns with final weighted score in the latest run.";
+  }
 }
 
 function createAnalyticsCharts() {
   const barCanvas = document.getElementById("brandBarChart");
+  const topFiveCanvas = document.getElementById("topFiveScoresChart");
   const lineCanvas = document.getElementById("trendLineChart");
   const pieCanvas = document.getElementById("distributionPieChart");
   const radarCanvas = document.getElementById("winnerRadarChart");
+  const priceScoreCanvas = document.getElementById("priceScoreScatterChart");
   const factorCanvas = document.getElementById("factorBarChart");
   const livePayload = buildAnalyticsPayload();
 
@@ -359,6 +439,8 @@ function createAnalyticsCharts() {
   destroyAnalyticsCharts();
 
   if (barCanvas) {
+    const brandGradientOne = verticalGradient(barCanvas, "rgba(126, 241, 255, 0.95)", "rgba(126, 241, 255, 0.35)");
+    const brandGradientTwo = verticalGradient(barCanvas, "rgba(191, 140, 255, 0.92)", "rgba(191, 140, 255, 0.34)");
     analyticsCharts.push(new Chart(barCanvas, {
       type: "bar",
       data: {
@@ -367,16 +449,40 @@ function createAnalyticsCharts() {
           {
             label: "Average Score",
             data: livePayload?.averageByBrand || [89, 86],
-            backgroundColor: ["rgba(126, 241, 255, 0.88)", "rgba(191, 140, 255, 0.82)"],
-            borderRadius: 16,
+            backgroundColor: [brandGradientOne, brandGradientTwo],
+            borderColor: ["rgba(126, 241, 255, 1)", "rgba(191, 140, 255, 1)"],
+            borderWidth: 1,
+            borderRadius: 18,
+            borderSkipped: false,
+            barPercentage: 0.56,
+            categoryPercentage: 0.62,
           },
         ],
       },
-      options: commonChartOptions,
+      options: {
+        ...commonChartOptions,
+        plugins: {
+          ...commonChartOptions.plugins,
+          legend: { display: false },
+        },
+        scales: {
+          x: {
+            ...commonChartOptions.scales.x,
+            grid: { display: false },
+          },
+          y: {
+            ...commonChartOptions.scales.y,
+            min: 0,
+            max: 10,
+          },
+        },
+      },
     }));
   }
 
   if (lineCanvas) {
+    const lineFillOne = verticalGradient(lineCanvas, "rgba(126, 241, 255, 0.24)", "rgba(126, 241, 255, 0.01)");
+    const lineFillTwo = verticalGradient(lineCanvas, "rgba(191, 140, 255, 0.22)", "rgba(191, 140, 255, 0.01)");
     analyticsCharts.push(new Chart(lineCanvas, {
       type: "line",
       data: {
@@ -386,21 +492,85 @@ function createAnalyticsCharts() {
             label: "iPhone Trend",
             data: livePayload?.iphoneTrend || [52, 61, 70, 79, 87, 93],
             borderColor: "#7ef1ff",
-            backgroundColor: "rgba(126, 241, 255, 0.12)",
+            backgroundColor: lineFillOne,
             fill: true,
-            tension: 0.35,
+            tension: 0.38,
+            borderWidth: 3,
+            pointRadius: 3,
+            pointHoverRadius: 5,
+            pointBackgroundColor: "#7ef1ff",
+            pointBorderWidth: 0,
           },
           {
             label: "Samsung Trend",
             data: livePayload?.samsungTrend || [48, 58, 67, 75, 83, 90],
             borderColor: "#bf8cff",
-            backgroundColor: "rgba(191, 140, 255, 0.12)",
+            backgroundColor: lineFillTwo,
             fill: true,
-            tension: 0.35,
+            tension: 0.38,
+            borderWidth: 3,
+            pointRadius: 3,
+            pointHoverRadius: 5,
+            pointBackgroundColor: "#bf8cff",
+            pointBorderWidth: 0,
           },
         ],
       },
-      options: commonChartOptions,
+      options: {
+        ...commonChartOptions,
+        scales: {
+          x: {
+            ...commonChartOptions.scales.x,
+            grid: { display: false },
+          },
+          y: {
+            ...commonChartOptions.scales.y,
+            min: 0,
+            max: 10,
+          },
+        },
+      },
+    }));
+  }
+
+  if (topFiveCanvas) {
+    const topFiveGradient = verticalGradient(topFiveCanvas, "rgba(126, 241, 255, 0.96)", "rgba(191, 140, 255, 0.42)");
+    analyticsCharts.push(new Chart(topFiveCanvas, {
+      type: "bar",
+      data: {
+        labels: livePayload?.topFiveLabels || ["Phone A", "Phone B", "Phone C", "Phone D", "Phone E"],
+        datasets: [
+          {
+            label: "Final Score",
+            data: livePayload?.topFiveScores || [8.9, 8.7, 8.4, 8.2, 8.0],
+            backgroundColor: topFiveGradient,
+            borderColor: "rgba(126, 241, 255, 0.95)",
+            borderWidth: 1,
+            borderRadius: 16,
+            borderSkipped: false,
+            barPercentage: 0.68,
+            categoryPercentage: 0.76,
+          },
+        ],
+      },
+      options: {
+        ...commonChartOptions,
+        plugins: {
+          ...commonChartOptions.plugins,
+          legend: { display: false },
+        },
+        scales: {
+          x: {
+            ...commonChartOptions.scales.x,
+            grid: { display: false },
+          },
+          y: {
+            ...commonChartOptions.scales.y,
+            min: 0,
+            max: 10,
+          },
+        },
+      },
     }));
   }
 
@@ -417,7 +587,9 @@ function createAnalyticsCharts() {
               "rgba(191, 140, 255, 0.82)",
               "rgba(255, 210, 125, 0.82)",
             ],
-            borderWidth: 0,
+            borderWidth: 3,
+            borderColor: "rgba(9, 17, 29, 0.85)",
+            hoverOffset: 8,
           },
         ],
       },
@@ -429,9 +601,11 @@ function createAnalyticsCharts() {
             labels: {
               color: chartText,
               usePointStyle: true,
+              padding: 18,
             },
           },
         },
+        cutout: "64%",
       },
     }));
   }
@@ -469,17 +643,19 @@ function createAnalyticsCharts() {
             label: winner?.model || "Winner",
             data: winnerRadarData,
             borderColor: "rgba(112, 229, 255, 0.95)",
-            backgroundColor: "rgba(112, 229, 255, 0.16)",
+            backgroundColor: "rgba(112, 229, 255, 0.12)",
             pointBackgroundColor: "rgba(112, 229, 255, 1)",
-            borderWidth: 2,
+            pointRadius: 3,
+            borderWidth: 2.5,
           },
           {
             label: runnerUp?.model || "Runner-up",
             data: runnerRadarData,
             borderColor: "rgba(191, 140, 255, 0.95)",
-            backgroundColor: "rgba(191, 140, 255, 0.14)",
+            backgroundColor: "rgba(191, 140, 255, 0.12)",
             pointBackgroundColor: "rgba(191, 140, 255, 1)",
-            borderWidth: 2,
+            pointRadius: 3,
+            borderWidth: 2.5,
           },
         ],
       },
@@ -508,11 +684,73 @@ function createAnalyticsCharts() {
     }));
   }
 
+  if (priceScoreCanvas) {
+    analyticsCharts.push(new Chart(priceScoreCanvas, {
+      type: "scatter",
+      data: {
+        datasets: [
+          {
+            label: "Selected Smartphones",
+            data: livePayload?.priceScorePoints || [],
+            backgroundColor: "rgba(126, 241, 255, 0.74)",
+            borderColor: "rgba(126, 241, 255, 1)",
+            pointRadius: 6,
+            pointHoverRadius: 8,
+            pointBorderWidth: 1.5,
+          },
+        ],
+      },
+      options: {
+        ...commonChartOptions,
+        plugins: {
+          ...commonChartOptions.plugins,
+          legend: { display: false },
+          tooltip: {
+            ...commonChartOptions.plugins.tooltip,
+            callbacks: {
+              label(context) {
+                const point = context.raw;
+                return `${point.model}: $${point.x}, score ${Number(point.y).toFixed(2)}`;
+              },
+            },
+          },
+        },
+        scales: {
+          x: {
+            ...commonChartOptions.scales.x,
+            title: {
+              display: true,
+              text: "Price (USD)",
+              color: chartMuted,
+              font: { size: 11, weight: "600" },
+            },
+          },
+          y: {
+            ...commonChartOptions.scales.y,
+            min: 0,
+            max: 10,
+            title: {
+              display: true,
+              text: "Final Score",
+              color: chartMuted,
+              font: { size: 11, weight: "600" },
+            },
+          },
+        },
+      },
+    }));
+  }
+
   if (factorCanvas) {
     const factorLabels =
       livePayload?.topContributions?.map((item) => item.label) || ["Price", "Performance", "Camera", "Battery"];
     const factorValues =
       livePayload?.topContributions?.map((item) => item.weightedScore) || [0, 0, 0, 0];
+    const factorGradient = horizontalGradient(
+      factorCanvas,
+      withAlpha("#7ef1ff", 0.96),
+      withAlpha("#bf8cff", 0.88)
+    );
 
     analyticsCharts.push(new Chart(factorCanvas, {
       type: "bar",
@@ -522,13 +760,13 @@ function createAnalyticsCharts() {
           {
             label: "Weighted Contribution",
             data: factorValues,
-            backgroundColor: [
-              "rgba(112, 229, 255, 0.88)",
-              "rgba(191, 140, 255, 0.82)",
-              "rgba(255, 210, 125, 0.82)",
-              "rgba(133, 240, 187, 0.82)",
-            ],
-            borderRadius: 14,
+            backgroundColor: factorGradient,
+            borderColor: "rgba(126, 241, 255, 0.7)",
+            borderWidth: 1,
+            borderRadius: 16,
+            borderSkipped: false,
+            barPercentage: 0.64,
+            categoryPercentage: 0.72,
           },
         ],
       },
@@ -537,20 +775,33 @@ function createAnalyticsCharts() {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: {
-            labels: { color: chartText },
-          },
+          ...commonChartOptions.plugins,
+          legend: { display: false },
         },
         scales: {
           x: {
             min: 0,
             max: 4,
-            ticks: { color: chartMuted },
+            ticks: {
+              color: chartMuted,
+              font: {
+                size: 11,
+                weight: "600",
+              },
+            },
             grid: { color: chartGrid },
+            border: { display: false },
           },
           y: {
-            ticks: { color: chartMuted },
+            ticks: {
+              color: chartText,
+              font: {
+                size: 12,
+                weight: "600",
+              },
+            },
             grid: { display: false },
+            border: { display: false },
           },
         },
       },

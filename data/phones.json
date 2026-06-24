@@ -7,7 +7,11 @@
     "camera_score": 5.0,
     "battery_score": 4.8,
     "performance_score": 5.1,
-    "image": "assets/images/products/iphone-4.png"
+    "image": "assets/images/products/iphone-4.png",
+    "price_score": 9.4,
+    "display_score": 4.9,
+    "software_support_score": 6.1,
+    "software_score": 6.1
   },
   {
     "model": "Samsung Galaxy S",
@@ -17,7 +21,11 @@
     "camera_score": 4.8,
     "battery_score": 4.9,
     "performance_score": 5.0,
-    "image": "assets/images/products/samsung-galaxy-s.jpg"
+    "image": "assets/images/products/samsung-galaxy-s.jpg",
+    "price_score": 9.6,
+    "display_score": 5.2,
+    "software_support_score": 5.4,
+    "software_score": 5.4
   },
   {
     "model": "iPhone 4S",
@@ -27,7 +35,11 @@
     "camera_score": 5.3,
     "battery_score": 5.0,
     "performance_score": 5.4,
-    "image": "assets/images/products/iphone-4s.png"
+    "image": "assets/images/products/iphone-4s.png",
+    "price_score": 9.3,
+    "display_score": 5.2,
+    "software_support_score": 6.3,
+    "software_score": 6.3
   },
   {
     "model": "Samsung Galaxy Note",
@@ -37,7 +49,11 @@
     "camera_score": 5.3,
     "battery_score": 5.3,
     "performance_score": 5.5,
-    "image": "assets/images/products/samsung-galaxy-note.jpg"
+    "image": "assets/images/products/samsung-galaxy-note.jpg",
+    "price_score": 9.1,
+    "display_score": 5.8,
+    "software_support_score": 5.6,
+    "software_score": 5.6
   },
   {
     "model": "Samsung Galaxy S II",
@@ -47,7 +63,11 @@
     "camera_score": 5.0,
     "battery_score": 5.1,
     "performance_score": 5.3,
-    "image": "assets/images/products/samsung-galaxy-s-ii.jpg"
+    "image": "assets/images/products/samsung-galaxy-s-ii.jpg",
+    "price_score": 9.5,
+    "display_score": 5.4,
+    "software_support_score": 5.6,
+    "software_score": 5.6
   },
   {
     "model": "iPhone 5",
@@ -57,7 +77,11 @@
     "camera_score": 5.5,
     "battery_score": 5.2,
     "performance_score": 5.7,
-    "image": "assets/images/products/iphone-5.png"
+    "image": "assets/images/products/iphone-5.png",
+    "price_score": 9.3,
+    "display_score": 5.4,
+    "software_support_score": 6.6,
+    "software_score": 6.6
   },
   {
     "model": "Samsung Galaxy Note II",
@@ -67,7 +91,11 @@
     "camera_score": 5.5,
     "battery_score": 5.5,
     "performance_score": 5.8,
-    "image": "assets/images/products/samsung-galaxy-note-ii.jpg"
+    "image": "assets/images/products/samsung-galaxy-note-ii.jpg",
+    "price_score": 9.1,
+    "display_score": 6.0,
+    "software_support_score": 5.8,
+    "software_score": 5.8
   },
   {
     "model": "Samsung Galaxy S III",
@@ -77,7 +105,11 @@
     "camera_score": 5.3,
     "battery_score": 5.4,
     "performance_score": 5.5,
-    "image": "assets/images/products/samsung-galaxy-s-iii.jpg"
+    "image": "assets/images/products/samsung-galaxy-s-iii.jpg",
+    "price_score": 9.4,
+    "display_score": 5.7,
+    "software_support_score": 5.8,
+    "software_score": 5.8
   },
   {
     "model": "iPhone 5c",
@@ -87,7 +119,11 @@
     "camera_score": 5.6,
     "battery_score": 5.4,
     "performance_score": 5.9,
-    "image": "assets/images/products/iphone-5c.jpg"
+    "image": "assets/images/products/iphone-5c.jpg",
+    "price_score": 9.6,
+    "display_score": 5.7,
+    "software_support_score": 6.8,
+    "software_score": 6.8
   },
   {
     "model": "iPhone 5s",
@@ -97,7 +133,11 @@
     "camera_score": 5.8,
     "battery_score": 5.5,
     "performance_score": 5.9,
-    "image": "assets/images/products/iphone-5s.png"
+    "image": "assets/images/products/iphone-5s.png",
+    "price_score": 9.3,
+    "display_score": 5.7,
+    "software_support_score": 6.8,
+    "software_score": 6.8
   },
   {
     "model": "Samsung Galaxy Note 3",
@@ -107,7 +147,11 @@
     "camera_score": 5.8,
     "battery_score": 5.8,
     "performance_score": 6.1,
-    "image": "assets/images/products/samsung-galaxy-note-3.jpg"
+    "image": "assets/images/products/samsung-galaxy-note-3.jpg",
+    "price_score": 9.1,
+    "display_score": 6.3,
+    "software_support_score": 6.1,
+    "software_score": 6.1
   },
   {
     "model": "Samsung Galaxy S4",
@@ -117,7 +161,11 @@
     "camera_score": 5.5,
     "battery_score": 5.6,
     "performance_score": 5.8,
-    "image": "assets/images/products/samsung-galaxy-s4.png"
+    "image": "assets/images/products/samsung-galaxy-s4.png",
+    "price_score": 9.3,
+    "display_score": 5.9,
+    "software_support_score": 6.1,
+    "software_score": 6.1
   },
   {
     "model": "iPhone 6",
@@ -127,7 +175,11 @@
     "camera_score": 6.0,
     "battery_score": 5.7,
     "performance_score": 6.2,
-    "image": "assets/images/products/iphone-6.png"
+    "image": "assets/images/products/iphone-6.png",
+    "price_score": 9.3,
+    "display_score": 5.9,
+    "software_support_score": 7.1,
+    "software_score": 7.1
   },
   {
     "model": "iPhone 6 Plus",
@@ -137,7 +189,11 @@
     "camera_score": 6.1,
     "battery_score": 5.9,
     "performance_score": 6.3,
-    "image": "assets/images/products/iphone-6-plus.png"
+    "image": "assets/images/products/iphone-6-plus.png",
+    "price_score": 9.0,
+    "display_score": 6.3,
+    "software_support_score": 7.1,
+    "software_score": 7.1
   },
   {
     "model": "Samsung Galaxy Note 4",
@@ -147,7 +203,11 @@
     "camera_score": 6.0,
     "battery_score": 6.0,
     "performance_score": 6.3,
-    "image": "assets/images/products/samsung-galaxy-note-4.jpg"
+    "image": "assets/images/products/samsung-galaxy-note-4.jpg",
+    "price_score": 9.0,
+    "display_score": 6.5,
+    "software_support_score": 6.3,
+    "software_score": 6.3
   },
   {
     "model": "Samsung Galaxy S5",
@@ -157,7 +217,11 @@
     "camera_score": 5.8,
     "battery_score": 5.8,
     "performance_score": 6.1,
-    "image": "assets/images/products/samsung-galaxy-s5.jpg"
+    "image": "assets/images/products/samsung-galaxy-s5.jpg",
+    "price_score": 9.3,
+    "display_score": 6.2,
+    "software_support_score": 6.3,
+    "software_score": 6.3
   },
   {
     "model": "iPhone 6s",
@@ -167,7 +231,11 @@
     "camera_score": 6.3,
     "battery_score": 5.9,
     "performance_score": 6.5,
-    "image": "assets/images/products/iphone-6s.png"
+    "image": "assets/images/products/iphone-6s.png",
+    "price_score": 9.3,
+    "display_score": 6.2,
+    "software_support_score": 7.3,
+    "software_score": 7.3
   },
   {
     "model": "iPhone 6s Plus",
@@ -177,7 +245,11 @@
     "camera_score": 6.3,
     "battery_score": 6.1,
     "performance_score": 6.6,
-    "image": "assets/images/products/iphone-6s-plus.png"
+    "image": "assets/images/products/iphone-6s-plus.png",
+    "price_score": 9.0,
+    "display_score": 6.6,
+    "software_support_score": 7.3,
+    "software_score": 7.3
   },
   {
     "model": "Samsung Galaxy Note5",
@@ -187,7 +259,11 @@
     "camera_score": 6.3,
     "battery_score": 6.2,
     "performance_score": 6.6,
-    "image": "assets/images/products/samsung-galaxy-note5.jpg"
+    "image": "assets/images/products/samsung-galaxy-note5.jpg",
+    "price_score": 9.0,
+    "display_score": 6.8,
+    "software_support_score": 6.6,
+    "software_score": 6.6
   },
   {
     "model": "Samsung Galaxy S6",
@@ -197,7 +273,11 @@
     "camera_score": 6.0,
     "battery_score": 6.1,
     "performance_score": 6.3,
-    "image": "assets/images/products/samsung-galaxy-s6.jpg"
+    "image": "assets/images/products/samsung-galaxy-s6.jpg",
+    "price_score": 9.3,
+    "display_score": 6.5,
+    "software_support_score": 6.6,
+    "software_score": 6.6
   },
   {
     "model": "Samsung Galaxy S6 edge",
@@ -207,7 +287,11 @@
     "camera_score": 6.2,
     "battery_score": 6.2,
     "performance_score": 6.4,
-    "image": "assets/images/products/samsung-galaxy-s6-edge.jpg"
+    "image": "assets/images/products/samsung-galaxy-s6-edge.jpg",
+    "price_score": 9.0,
+    "display_score": 6.5,
+    "software_support_score": 6.6,
+    "software_score": 6.6
   },
   {
     "model": "Samsung Galaxy S6 edge+",
@@ -217,7 +301,11 @@
     "camera_score": 6.2,
     "battery_score": 6.3,
     "performance_score": 6.5,
-    "image": "assets/images/products/samsung-galaxy-s6-edgeplus.jpg"
+    "image": "assets/images/products/samsung-galaxy-s6-edgeplus.jpg",
+    "price_score": 8.8,
+    "display_score": 6.5,
+    "software_support_score": 6.6,
+    "software_score": 6.6
   },
   {
     "model": "iPhone 7",
@@ -227,7 +315,11 @@
     "camera_score": 6.6,
     "battery_score": 6.1,
     "performance_score": 6.8,
-    "image": "assets/images/products/iphone-7.png"
+    "image": "assets/images/products/iphone-7.png",
+    "price_score": 9.3,
+    "display_score": 6.5,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "iPhone 7 Plus",
@@ -237,7 +329,11 @@
     "camera_score": 6.6,
     "battery_score": 6.3,
     "performance_score": 6.9,
-    "image": "assets/images/products/iphone-7-plus.png"
+    "image": "assets/images/products/iphone-7-plus.png",
+    "price_score": 8.9,
+    "display_score": 6.8,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "iPhone SE",
@@ -247,7 +343,11 @@
     "camera_score": 6.5,
     "battery_score": 6.0,
     "performance_score": 6.8,
-    "image": "assets/images/products/iphone-se.jpg"
+    "image": "assets/images/products/iphone-se.jpg",
+    "price_score": 10.0,
+    "display_score": 6.5,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "Samsung Galaxy Note7",
@@ -257,7 +357,11 @@
     "camera_score": 6.5,
     "battery_score": 6.5,
     "performance_score": 6.9,
-    "image": "assets/images/products/samsung-galaxy-note7.jpg"
+    "image": "assets/images/products/samsung-galaxy-note7.jpg",
+    "price_score": 8.7,
+    "display_score": 7.1,
+    "software_support_score": 6.8,
+    "software_score": 6.8
   },
   {
     "model": "Samsung Galaxy S7",
@@ -267,7 +371,11 @@
     "camera_score": 6.3,
     "battery_score": 6.3,
     "performance_score": 6.6,
-    "image": "assets/images/products/samsung-galaxy-s7.jpg"
+    "image": "assets/images/products/samsung-galaxy-s7.jpg",
+    "price_score": 9.2,
+    "display_score": 6.7,
+    "software_support_score": 6.8,
+    "software_score": 6.8
   },
   {
     "model": "Samsung Galaxy S7 edge",
@@ -277,7 +385,11 @@
     "camera_score": 6.4,
     "battery_score": 6.4,
     "performance_score": 6.7,
-    "image": "assets/images/products/samsung-galaxy-s7-edge.jpg"
+    "image": "assets/images/products/samsung-galaxy-s7-edge.jpg",
+    "price_score": 8.9,
+    "display_score": 6.7,
+    "software_support_score": 6.8,
+    "software_score": 6.8
   },
   {
     "model": "iPhone 8",
@@ -287,7 +399,11 @@
     "camera_score": 6.8,
     "battery_score": 6.3,
     "performance_score": 7.1,
-    "image": "assets/images/products/iphone-8.jpg"
+    "image": "assets/images/products/iphone-8.jpg",
+    "price_score": 9.1,
+    "display_score": 6.7,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "iPhone 8 Plus",
@@ -297,7 +413,11 @@
     "camera_score": 6.9,
     "battery_score": 6.5,
     "performance_score": 7.1,
-    "image": "assets/images/products/iphone-8-plus.jpg"
+    "image": "assets/images/products/iphone-8-plus.jpg",
+    "price_score": 8.8,
+    "display_score": 7.1,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "iPhone X",
@@ -307,7 +427,11 @@
     "camera_score": 7.1,
     "battery_score": 6.5,
     "performance_score": 7.4,
-    "image": "assets/images/products/iphone-x.jpg"
+    "image": "assets/images/products/iphone-x.jpg",
+    "price_score": 8.2,
+    "display_score": 6.7,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "Samsung Galaxy Note8",
@@ -317,7 +441,11 @@
     "camera_score": 6.8,
     "battery_score": 6.7,
     "performance_score": 7.1,
-    "image": "assets/images/products/samsung-galaxy-note8.jpg"
+    "image": "assets/images/products/samsung-galaxy-note8.jpg",
+    "price_score": 8.4,
+    "display_score": 7.3,
+    "software_support_score": 7.1,
+    "software_score": 7.1
   },
   {
     "model": "Samsung Galaxy S8",
@@ -327,7 +455,11 @@
     "camera_score": 6.5,
     "battery_score": 6.5,
     "performance_score": 6.9,
-    "image": "assets/images/products-generated/samsung-galaxy-s8.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s8.svg",
+    "price_score": 9.0,
+    "display_score": 7.0,
+    "software_support_score": 7.1,
+    "software_score": 7.1
   },
   {
     "model": "Samsung Galaxy S8+",
@@ -337,7 +469,11 @@
     "camera_score": 6.6,
     "battery_score": 6.7,
     "performance_score": 7.0,
-    "image": "assets/images/products-generated/samsung-galaxy-s8plus.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s8plus.svg",
+    "price_score": 8.7,
+    "display_score": 7.0,
+    "software_support_score": 7.1,
+    "software_score": 7.1
   },
   {
     "model": "iPhone XR",
@@ -347,7 +483,11 @@
     "camera_score": 6.9,
     "battery_score": 6.5,
     "performance_score": 7.3,
-    "image": "assets/images/products/iphone-xr.jpg"
+    "image": "assets/images/products/iphone-xr.jpg",
+    "price_score": 9.0,
+    "display_score": 7.0,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "iPhone XS",
@@ -357,7 +497,11 @@
     "camera_score": 7.4,
     "battery_score": 6.7,
     "performance_score": 7.7,
-    "image": "assets/images/products/iphone-xs.jpg"
+    "image": "assets/images/products/iphone-xs.jpg",
+    "price_score": 8.2,
+    "display_score": 7.0,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "iPhone XS Max",
@@ -367,7 +511,11 @@
     "camera_score": 7.5,
     "battery_score": 6.8,
     "performance_score": 7.8,
-    "image": "assets/images/products/iphone-xs-max.jpg"
+    "image": "assets/images/products/iphone-xs-max.jpg",
+    "price_score": 7.9,
+    "display_score": 7.3,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "Samsung Galaxy Note9",
@@ -377,7 +525,11 @@
     "camera_score": 7.0,
     "battery_score": 6.9,
     "performance_score": 7.4,
-    "image": "assets/images/products/samsung-galaxy-note9.jpg"
+    "image": "assets/images/products/samsung-galaxy-note9.jpg",
+    "price_score": 8.2,
+    "display_score": 7.6,
+    "software_support_score": 7.3,
+    "software_score": 7.3
   },
   {
     "model": "Samsung Galaxy S9",
@@ -387,7 +539,11 @@
     "camera_score": 6.8,
     "battery_score": 6.7,
     "performance_score": 7.2,
-    "image": "assets/images/products-generated/samsung-galaxy-s9.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s9.svg",
+    "price_score": 9.0,
+    "display_score": 7.2,
+    "software_support_score": 7.3,
+    "software_score": 7.3
   },
   {
     "model": "Samsung Galaxy S9+",
@@ -397,7 +553,11 @@
     "camera_score": 6.9,
     "battery_score": 6.9,
     "performance_score": 7.2,
-    "image": "assets/images/products-generated/samsung-galaxy-s9plus.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s9plus.svg",
+    "price_score": 8.7,
+    "display_score": 7.2,
+    "software_support_score": 7.3,
+    "software_score": 7.3
   },
   {
     "model": "iPhone 11",
@@ -407,7 +567,11 @@
     "camera_score": 7.3,
     "battery_score": 6.8,
     "performance_score": 7.6,
-    "image": "assets/images/products/iphone-11.jpg"
+    "image": "assets/images/products/iphone-11.jpg",
+    "price_score": 9.1,
+    "display_score": 7.2,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "iPhone 11 Pro",
@@ -417,7 +581,11 @@
     "camera_score": 7.6,
     "battery_score": 6.9,
     "performance_score": 8.0,
-    "image": "assets/images/products/iphone-11-pro.jpg"
+    "image": "assets/images/products/iphone-11-pro.jpg",
+    "price_score": 8.2,
+    "display_score": 7.4,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "iPhone 11 Pro Max",
@@ -427,7 +595,11 @@
     "camera_score": 7.8,
     "battery_score": 7.1,
     "performance_score": 8.0,
-    "image": "assets/images/products/iphone-11-pro-max.jpg"
+    "image": "assets/images/products/iphone-11-pro-max.jpg",
+    "price_score": 7.9,
+    "display_score": 7.8,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "Samsung Galaxy Fold",
@@ -437,7 +609,11 @@
     "camera_score": 7.4,
     "battery_score": 7.2,
     "performance_score": 7.8,
-    "image": "assets/images/products/samsung-galaxy-fold.jpg"
+    "image": "assets/images/products/samsung-galaxy-fold.jpg",
+    "price_score": 5.3,
+    "display_score": 7.9,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "Samsung Galaxy Note10",
@@ -447,7 +623,11 @@
     "camera_score": 7.3,
     "battery_score": 7.2,
     "performance_score": 7.7,
-    "image": "assets/images/products/samsung-galaxy-note10.jpg"
+    "image": "assets/images/products/samsung-galaxy-note10.jpg",
+    "price_score": 8.4,
+    "display_score": 7.8,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "Samsung Galaxy Note10+",
@@ -457,7 +637,11 @@
     "camera_score": 7.4,
     "battery_score": 7.2,
     "performance_score": 7.7,
-    "image": "assets/images/products-generated/samsung-galaxy-note10plus.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-note10plus.svg",
+    "price_score": 7.9,
+    "display_score": 7.8,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "Samsung Galaxy S10",
@@ -467,7 +651,11 @@
     "camera_score": 7.0,
     "battery_score": 7.0,
     "performance_score": 7.4,
-    "image": "assets/images/products-generated/samsung-galaxy-s10.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s10.svg",
+    "price_score": 8.5,
+    "display_score": 7.5,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "Samsung Galaxy S10+",
@@ -477,7 +665,11 @@
     "camera_score": 7.1,
     "battery_score": 7.2,
     "performance_score": 7.5,
-    "image": "assets/images/products-generated/samsung-galaxy-s10plus.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s10plus.svg",
+    "price_score": 8.2,
+    "display_score": 7.5,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "Samsung Galaxy S10e",
@@ -487,7 +679,11 @@
     "camera_score": 7.0,
     "battery_score": 6.9,
     "performance_score": 7.4,
-    "image": "assets/images/products-generated/samsung-galaxy-s10e.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s10e.svg",
+    "price_score": 9.0,
+    "display_score": 7.5,
+    "software_support_score": 7.6,
+    "software_score": 7.6
   },
   {
     "model": "iPhone 12",
@@ -497,7 +693,11 @@
     "camera_score": 7.6,
     "battery_score": 7.0,
     "performance_score": 7.9,
-    "image": "assets/images/products/iphone-12.jpg"
+    "image": "assets/images/products/iphone-12.jpg",
+    "price_score": 8.8,
+    "display_score": 7.5,
+    "software_support_score": 8.6,
+    "software_score": 8.6
   },
   {
     "model": "iPhone 12 Pro",
@@ -507,7 +707,11 @@
     "camera_score": 7.9,
     "battery_score": 7.2,
     "performance_score": 8.2,
-    "image": "assets/images/products/iphone-12-pro.jpg"
+    "image": "assets/images/products/iphone-12-pro.jpg",
+    "price_score": 8.2,
+    "display_score": 7.7,
+    "software_support_score": 8.6,
+    "software_score": 8.6
   },
   {
     "model": "iPhone 12 Pro Max",
@@ -517,7 +721,11 @@
     "camera_score": 8.0,
     "battery_score": 7.3,
     "performance_score": 8.3,
-    "image": "assets/images/products/iphone-12-pro-max.jpg"
+    "image": "assets/images/products/iphone-12-pro-max.jpg",
+    "price_score": 7.9,
+    "display_score": 8.1,
+    "software_support_score": 8.6,
+    "software_score": 8.6
   },
   {
     "model": "iPhone 12 mini",
@@ -527,7 +735,11 @@
     "camera_score": 7.6,
     "battery_score": 6.9,
     "performance_score": 8.0,
-    "image": "assets/images/products/iphone-12-mini.jpg"
+    "image": "assets/images/products/iphone-12-mini.jpg",
+    "price_score": 9.1,
+    "display_score": 7.5,
+    "software_support_score": 8.6,
+    "software_score": 8.6
   },
   {
     "model": "iPhone SE (2nd gen)",
@@ -537,7 +749,11 @@
     "camera_score": 7.5,
     "battery_score": 6.8,
     "performance_score": 7.9,
-    "image": "assets/images/products/iphone-se-2nd-gen.jpg"
+    "image": "assets/images/products/iphone-se-2nd-gen.jpg",
+    "price_score": 10.0,
+    "display_score": 7.5,
+    "software_support_score": 8.6,
+    "software_score": 8.6
   },
   {
     "model": "Samsung Galaxy Note20",
@@ -547,7 +763,11 @@
     "camera_score": 7.5,
     "battery_score": 7.4,
     "performance_score": 7.9,
-    "image": "assets/images/products/samsung-galaxy-note20.jpg"
+    "image": "assets/images/products/samsung-galaxy-note20.jpg",
+    "price_score": 8.2,
+    "display_score": 8.1,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "Samsung Galaxy Note20 Ultra",
@@ -557,7 +777,11 @@
     "camera_score": 7.8,
     "battery_score": 7.5,
     "performance_score": 8.1,
-    "image": "assets/images/products-generated/samsung-galaxy-note20-ultra.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-note20-ultra.svg",
+    "price_score": 7.3,
+    "display_score": 8.1,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "Samsung Galaxy S20",
@@ -567,7 +791,11 @@
     "camera_score": 7.3,
     "battery_score": 7.2,
     "performance_score": 7.7,
-    "image": "assets/images/products/samsung-galaxy-s20.jpg"
+    "image": "assets/images/products/samsung-galaxy-s20.jpg",
+    "price_score": 8.2,
+    "display_score": 7.8,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "Samsung Galaxy S20 Ultra",
@@ -577,7 +805,11 @@
     "camera_score": 7.8,
     "battery_score": 7.5,
     "performance_score": 8.1,
-    "image": "assets/images/products-generated/samsung-galaxy-s20-ultra.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s20-ultra.svg",
+    "price_score": 7.0,
+    "display_score": 8.1,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "Samsung Galaxy S20+",
@@ -587,7 +819,11 @@
     "camera_score": 7.4,
     "battery_score": 7.4,
     "performance_score": 7.8,
-    "image": "assets/images/products/samsung-galaxy-s20plus.jpg"
+    "image": "assets/images/products/samsung-galaxy-s20plus.jpg",
+    "price_score": 7.6,
+    "display_score": 7.8,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "Samsung Galaxy Z Flip",
@@ -597,7 +833,11 @@
     "camera_score": 7.5,
     "battery_score": 7.3,
     "performance_score": 7.9,
-    "image": "assets/images/products-generated/samsung-galaxy-z-flip.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-z-flip.svg",
+    "price_score": 7.1,
+    "display_score": 7.9,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "Samsung Galaxy Z Fold2",
@@ -607,7 +847,11 @@
     "camera_score": 7.6,
     "battery_score": 7.4,
     "performance_score": 8.0,
-    "image": "assets/images/products/samsung-galaxy-z-fold2.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-fold2.jpg",
+    "price_score": 5.2,
+    "display_score": 8.2,
+    "software_support_score": 7.8,
+    "software_score": 7.8
   },
   {
     "model": "iPhone 13",
@@ -617,7 +861,11 @@
     "camera_score": 7.9,
     "battery_score": 7.2,
     "performance_score": 8.2,
-    "image": "assets/images/products/iphone-13.jpg"
+    "image": "assets/images/products/iphone-13.jpg",
+    "price_score": 8.8,
+    "display_score": 7.8,
+    "software_support_score": 8.8,
+    "software_score": 8.8
   },
   {
     "model": "iPhone 13 Pro",
@@ -627,7 +875,11 @@
     "camera_score": 8.2,
     "battery_score": 7.4,
     "performance_score": 8.5,
-    "image": "assets/images/products/iphone-13-pro.jpg"
+    "image": "assets/images/products/iphone-13-pro.jpg",
+    "price_score": 8.2,
+    "display_score": 8.0,
+    "software_support_score": 8.8,
+    "software_score": 8.8
   },
   {
     "model": "iPhone 13 Pro Max",
@@ -637,7 +889,11 @@
     "camera_score": 8.3,
     "battery_score": 7.5,
     "performance_score": 8.6,
-    "image": "assets/images/products/iphone-13-pro-max.jpg"
+    "image": "assets/images/products/iphone-13-pro-max.jpg",
+    "price_score": 7.9,
+    "display_score": 8.3,
+    "software_support_score": 8.8,
+    "software_score": 8.8
   },
   {
     "model": "iPhone 13 mini",
@@ -647,7 +903,11 @@
     "camera_score": 7.9,
     "battery_score": 7.1,
     "performance_score": 8.3,
-    "image": "assets/images/products/iphone-13-mini.jpg"
+    "image": "assets/images/products/iphone-13-mini.jpg",
+    "price_score": 9.1,
+    "display_score": 7.8,
+    "software_support_score": 8.8,
+    "software_score": 8.8
   },
   {
     "model": "Samsung Galaxy S21",
@@ -657,7 +917,11 @@
     "camera_score": 7.5,
     "battery_score": 7.4,
     "performance_score": 8.0,
-    "image": "assets/images/products/samsung-galaxy-s21.jpg"
+    "image": "assets/images/products/samsung-galaxy-s21.jpg",
+    "price_score": 8.8,
+    "display_score": 8.0,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "Samsung Galaxy S21 Ultra",
@@ -667,7 +931,11 @@
     "camera_score": 8.0,
     "battery_score": 7.7,
     "performance_score": 8.4,
-    "image": "assets/images/products-generated/samsung-galaxy-s21-ultra.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s21-ultra.svg",
+    "price_score": 7.6,
+    "display_score": 8.4,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "Samsung Galaxy S21+",
@@ -677,7 +945,11 @@
     "camera_score": 7.6,
     "battery_score": 7.6,
     "performance_score": 8.1,
-    "image": "assets/images/products-generated/samsung-galaxy-s21plus.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s21plus.svg",
+    "price_score": 8.2,
+    "display_score": 8.0,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "Samsung Galaxy Z Flip3",
@@ -687,7 +959,11 @@
     "camera_score": 7.7,
     "battery_score": 7.5,
     "performance_score": 8.2,
-    "image": "assets/images/products/samsung-galaxy-z-flip3.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-flip3.jpg",
+    "price_score": 8.2,
+    "display_score": 8.2,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "Samsung Galaxy Z Fold3",
@@ -697,7 +973,11 @@
     "camera_score": 7.9,
     "battery_score": 7.6,
     "performance_score": 8.3,
-    "image": "assets/images/products/samsung-galaxy-z-fold3.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-fold3.jpg",
+    "price_score": 5.8,
+    "display_score": 8.5,
+    "software_support_score": 8.1,
+    "software_score": 8.1
   },
   {
     "model": "iPhone 14",
@@ -707,7 +987,11 @@
     "camera_score": 8.1,
     "battery_score": 7.4,
     "performance_score": 8.5,
-    "image": "assets/images/products/iphone-14.jpg"
+    "image": "assets/images/products/iphone-14.jpg",
+    "price_score": 8.8,
+    "display_score": 8.0,
+    "software_support_score": 9.1,
+    "software_score": 9.1
   },
   {
     "model": "iPhone 14 Plus",
@@ -717,7 +1001,11 @@
     "camera_score": 8.2,
     "battery_score": 7.6,
     "performance_score": 8.5,
-    "image": "assets/images/products/iphone-14-plus.jpg"
+    "image": "assets/images/products/iphone-14-plus.jpg",
+    "price_score": 8.5,
+    "display_score": 8.4,
+    "software_support_score": 9.1,
+    "software_score": 9.1
   },
   {
     "model": "iPhone 14 Pro",
@@ -727,7 +1015,11 @@
     "camera_score": 8.4,
     "battery_score": 7.6,
     "performance_score": 8.8,
-    "image": "assets/images/products/iphone-14-pro.jpg"
+    "image": "assets/images/products/iphone-14-pro.jpg",
+    "price_score": 8.2,
+    "display_score": 8.2,
+    "software_support_score": 9.1,
+    "software_score": 9.1
   },
   {
     "model": "iPhone 14 Pro Max",
@@ -737,7 +1029,11 @@
     "camera_score": 8.6,
     "battery_score": 7.7,
     "performance_score": 8.9,
-    "image": "assets/images/products/iphone-14-pro-max.jpg"
+    "image": "assets/images/products/iphone-14-pro-max.jpg",
+    "price_score": 7.9,
+    "display_score": 8.6,
+    "software_support_score": 9.1,
+    "software_score": 9.1
   },
   {
     "model": "iPhone SE (3rd gen)",
@@ -747,7 +1043,11 @@
     "camera_score": 8.0,
     "battery_score": 7.3,
     "performance_score": 8.5,
-    "image": "assets/images/products/iphone-se-3rd-gen.jpg"
+    "image": "assets/images/products/iphone-se-3rd-gen.jpg",
+    "price_score": 9.9,
+    "display_score": 8.0,
+    "software_support_score": 9.1,
+    "software_score": 9.1
   },
   {
     "model": "Samsung Galaxy S21 FE",
@@ -757,7 +1057,11 @@
     "camera_score": 7.8,
     "battery_score": 7.7,
     "performance_score": 8.3,
-    "image": "assets/images/products/samsung-galaxy-s21-fe.jpg"
+    "image": "assets/images/products/samsung-galaxy-s21-fe.jpg",
+    "price_score": 9.1,
+    "display_score": 8.4,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "Samsung Galaxy S22",
@@ -767,7 +1071,11 @@
     "camera_score": 7.8,
     "battery_score": 7.7,
     "performance_score": 8.2,
-    "image": "assets/images/products/samsung-galaxy-s22.jpg"
+    "image": "assets/images/products/samsung-galaxy-s22.jpg",
+    "price_score": 8.8,
+    "display_score": 8.3,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "Samsung Galaxy S22 Ultra",
@@ -777,7 +1085,11 @@
     "camera_score": 8.3,
     "battery_score": 8.0,
     "performance_score": 8.7,
-    "image": "assets/images/products/samsung-galaxy-s22-ultra.jpg"
+    "image": "assets/images/products/samsung-galaxy-s22-ultra.jpg",
+    "price_score": 7.6,
+    "display_score": 8.6,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "Samsung Galaxy S22+",
@@ -787,7 +1099,11 @@
     "camera_score": 7.9,
     "battery_score": 7.8,
     "performance_score": 8.3,
-    "image": "assets/images/products/samsung-galaxy-s22plus.jpg"
+    "image": "assets/images/products/samsung-galaxy-s22plus.jpg",
+    "price_score": 8.2,
+    "display_score": 8.3,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "Samsung Galaxy Z Flip4",
@@ -797,7 +1113,11 @@
     "camera_score": 8.0,
     "battery_score": 7.7,
     "performance_score": 8.4,
-    "image": "assets/images/products/samsung-galaxy-z-flip4.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-flip4.jpg",
+    "price_score": 8.2,
+    "display_score": 8.4,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "Samsung Galaxy Z Fold4",
@@ -807,7 +1127,11 @@
     "camera_score": 8.2,
     "battery_score": 7.8,
     "performance_score": 8.6,
-    "image": "assets/images/products/samsung-galaxy-z-fold4.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-fold4.jpg",
+    "price_score": 5.8,
+    "display_score": 8.7,
+    "software_support_score": 8.3,
+    "software_score": 8.3
   },
   {
     "model": "iPhone 15",
@@ -817,7 +1141,11 @@
     "camera_score": 8.4,
     "battery_score": 7.7,
     "performance_score": 8.7,
-    "image": "assets/images/products/iphone-15.jpg"
+    "image": "assets/images/products/iphone-15.jpg",
+    "price_score": 8.8,
+    "display_score": 8.3,
+    "software_support_score": 9.5,
+    "software_score": 9.5
   },
   {
     "model": "iPhone 15 Plus",
@@ -827,7 +1155,11 @@
     "camera_score": 8.4,
     "battery_score": 7.8,
     "performance_score": 8.8,
-    "image": "assets/images/products/iphone-15-plus.jpg"
+    "image": "assets/images/products/iphone-15-plus.jpg",
+    "price_score": 8.5,
+    "display_score": 8.6,
+    "software_support_score": 9.5,
+    "software_score": 9.5
   },
   {
     "model": "iPhone 15 Pro",
@@ -837,7 +1169,11 @@
     "camera_score": 8.7,
     "battery_score": 7.8,
     "performance_score": 9.1,
-    "image": "assets/images/products/iphone-15-pro.jpg"
+    "image": "assets/images/products/iphone-15-pro.jpg",
+    "price_score": 8.2,
+    "display_score": 8.5,
+    "software_support_score": 9.5,
+    "software_score": 9.5
   },
   {
     "model": "iPhone 15 Pro Max",
@@ -847,7 +1183,11 @@
     "camera_score": 8.8,
     "battery_score": 7.9,
     "performance_score": 9.2,
-    "image": "assets/images/products/iphone-15-pro-max.jpg"
+    "image": "assets/images/products/iphone-15-pro-max.jpg",
+    "price_score": 7.6,
+    "display_score": 8.8,
+    "software_support_score": 9.5,
+    "software_score": 9.5
   },
   {
     "model": "Samsung Galaxy S23",
@@ -857,7 +1197,11 @@
     "camera_score": 8.1,
     "battery_score": 7.9,
     "performance_score": 8.5,
-    "image": "assets/images/products/samsung-galaxy-s23.jpg"
+    "image": "assets/images/products/samsung-galaxy-s23.jpg",
+    "price_score": 8.8,
+    "display_score": 8.5,
+    "software_support_score": 8.7,
+    "software_score": 8.7
   },
   {
     "model": "Samsung Galaxy S23 FE",
@@ -867,7 +1211,11 @@
     "camera_score": 8.0,
     "battery_score": 7.9,
     "performance_score": 8.5,
-    "image": "assets/images/products/samsung-galaxy-s23-fe.jpg"
+    "image": "assets/images/products/samsung-galaxy-s23-fe.jpg",
+    "price_score": 9.4,
+    "display_score": 8.7,
+    "software_support_score": 8.7,
+    "software_score": 8.7
   },
   {
     "model": "Samsung Galaxy S23 Ultra",
@@ -877,7 +1225,11 @@
     "camera_score": 8.5,
     "battery_score": 8.2,
     "performance_score": 8.9,
-    "image": "assets/images/products/samsung-galaxy-s23-ultra.jpg"
+    "image": "assets/images/products/samsung-galaxy-s23-ultra.jpg",
+    "price_score": 7.6,
+    "display_score": 8.9,
+    "software_support_score": 8.7,
+    "software_score": 8.7
   },
   {
     "model": "Samsung Galaxy S23+",
@@ -887,7 +1239,11 @@
     "camera_score": 8.1,
     "battery_score": 8.1,
     "performance_score": 8.6,
-    "image": "assets/images/products/samsung-galaxy-s23plus.jpg"
+    "image": "assets/images/products/samsung-galaxy-s23plus.jpg",
+    "price_score": 8.2,
+    "display_score": 8.5,
+    "software_support_score": 8.7,
+    "software_score": 8.7
   },
   {
     "model": "Samsung Galaxy Z Flip5",
@@ -897,7 +1253,11 @@
     "camera_score": 8.2,
     "battery_score": 8.0,
     "performance_score": 8.7,
-    "image": "assets/images/products/samsung-galaxy-z-flip5.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-flip5.jpg",
+    "price_score": 8.2,
+    "display_score": 8.7,
+    "software_support_score": 8.7,
+    "software_score": 8.7
   },
   {
     "model": "Samsung Galaxy Z Fold5",
@@ -907,7 +1267,11 @@
     "camera_score": 8.4,
     "battery_score": 8.1,
     "performance_score": 8.8,
-    "image": "assets/images/products/samsung-galaxy-z-fold5.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-fold5.jpg",
+    "price_score": 5.8,
+    "display_score": 9.0,
+    "software_support_score": 8.7,
+    "software_score": 8.7
   },
   {
     "model": "iPhone 16",
@@ -917,7 +1281,11 @@
     "camera_score": 8.6,
     "battery_score": 7.9,
     "performance_score": 9.0,
-    "image": "assets/images/products/iphone-16.jpg"
+    "image": "assets/images/products/iphone-16.jpg",
+    "price_score": 8.8,
+    "display_score": 8.5,
+    "software_support_score": 9.7,
+    "software_score": 9.7
   },
   {
     "model": "iPhone 16 Plus",
@@ -927,7 +1295,11 @@
     "camera_score": 8.7,
     "battery_score": 8.1,
     "performance_score": 9.1,
-    "image": "assets/images/products/iphone-16-plus.jpg"
+    "image": "assets/images/products/iphone-16-plus.jpg",
+    "price_score": 8.5,
+    "display_score": 8.9,
+    "software_support_score": 9.7,
+    "software_score": 9.7
   },
   {
     "model": "iPhone 16 Pro",
@@ -937,7 +1309,11 @@
     "camera_score": 8.9,
     "battery_score": 8.0,
     "performance_score": 9.4,
-    "image": "assets/images/products/iphone-16-pro.jpg"
+    "image": "assets/images/products/iphone-16-pro.jpg",
+    "price_score": 8.2,
+    "display_score": 8.7,
+    "software_support_score": 9.7,
+    "software_score": 9.7
   },
   {
     "model": "iPhone 16 Pro Max",
@@ -947,7 +1323,11 @@
     "camera_score": 9.1,
     "battery_score": 8.2,
     "performance_score": 9.4,
-    "image": "assets/images/products/iphone-16-pro-max.jpg"
+    "image": "assets/images/products/iphone-16-pro-max.jpg",
+    "price_score": 7.6,
+    "display_score": 9.1,
+    "software_support_score": 9.7,
+    "software_score": 9.7
   },
   {
     "model": "Samsung Galaxy S24",
@@ -957,7 +1337,11 @@
     "camera_score": 8.3,
     "battery_score": 8.1,
     "performance_score": 8.8,
-    "image": "assets/images/products/samsung-galaxy-s24-official.png"
+    "image": "assets/images/products/samsung-galaxy-s24-official.png",
+    "price_score": 8.8,
+    "display_score": 8.8,
+    "software_support_score": 8.9,
+    "software_score": 8.9
   },
   {
     "model": "Samsung Galaxy S24 Ultra",
@@ -967,7 +1351,11 @@
     "camera_score": 8.8,
     "battery_score": 8.4,
     "performance_score": 9.2,
-    "image": "assets/images/products-generated/samsung-galaxy-s24-ultra.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s24-ultra.svg",
+    "price_score": 7.3,
+    "display_score": 9.1,
+    "software_support_score": 8.9,
+    "software_score": 8.9
   },
   {
     "model": "Samsung Galaxy S24+",
@@ -977,7 +1365,11 @@
     "camera_score": 8.4,
     "battery_score": 8.3,
     "performance_score": 8.9,
-    "image": "assets/images/products-generated/samsung-galaxy-s24plus.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-s24plus.svg",
+    "price_score": 8.2,
+    "display_score": 8.8,
+    "software_support_score": 8.9,
+    "software_score": 8.9
   },
   {
     "model": "Samsung Galaxy Z Flip6",
@@ -987,7 +1379,11 @@
     "camera_score": 8.5,
     "battery_score": 8.2,
     "performance_score": 9.0,
-    "image": "assets/images/products/samsung-galaxy-z-flip6.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-flip6.jpg",
+    "price_score": 7.9,
+    "display_score": 8.9,
+    "software_support_score": 8.9,
+    "software_score": 8.9
   },
   {
     "model": "Samsung Galaxy Z Fold6",
@@ -997,7 +1393,11 @@
     "camera_score": 8.7,
     "battery_score": 8.3,
     "performance_score": 9.1,
-    "image": "assets/images/products/samsung-galaxy-z-fold6.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-fold6.jpg",
+    "price_score": 5.5,
+    "display_score": 9.2,
+    "software_support_score": 8.9,
+    "software_score": 8.9
   },
   {
     "model": "iPhone 17",
@@ -1007,7 +1407,11 @@
     "camera_score": 8.9,
     "battery_score": 8.1,
     "performance_score": 9.3,
-    "image": "assets/images/products/iphone-17.jpg"
+    "image": "assets/images/products/iphone-17.jpg",
+    "price_score": 8.5,
+    "display_score": 8.8,
+    "software_support_score": 10.0,
+    "software_score": 10.0
   },
   {
     "model": "iPhone 17 Pro",
@@ -1017,7 +1421,11 @@
     "camera_score": 9.2,
     "battery_score": 8.2,
     "performance_score": 9.7,
-    "image": "assets/images/products/iphone-17-pro.jpg"
+    "image": "assets/images/products/iphone-17-pro.jpg",
+    "price_score": 7.6,
+    "display_score": 9.0,
+    "software_support_score": 10.0,
+    "software_score": 10.0
   },
   {
     "model": "iPhone 17 Pro Max",
@@ -1027,7 +1435,11 @@
     "camera_score": 9.3,
     "battery_score": 8.4,
     "performance_score": 9.7,
-    "image": "assets/images/products/iphone-17-pro-max.jpg"
+    "image": "assets/images/products/iphone-17-pro-max.jpg",
+    "price_score": 7.0,
+    "display_score": 9.4,
+    "software_support_score": 10.0,
+    "software_score": 10.0
   },
   {
     "model": "iPhone Air",
@@ -1037,7 +1449,11 @@
     "camera_score": 9.1,
     "battery_score": 8.2,
     "performance_score": 9.6,
-    "image": "assets/images/products/iphone-air.jpg"
+    "image": "assets/images/products/iphone-air.jpg",
+    "price_score": 8.2,
+    "display_score": 8.8,
+    "software_support_score": 10.0,
+    "software_score": 10.0
   },
   {
     "model": "Samsung Galaxy S25",
@@ -1047,7 +1463,11 @@
     "camera_score": 8.6,
     "battery_score": 8.4,
     "performance_score": 9.1,
-    "image": "assets/images/products/samsung-galaxy-s25.jpg"
+    "image": "assets/images/products/samsung-galaxy-s25.jpg",
+    "price_score": 8.8,
+    "display_score": 9.1,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   },
   {
     "model": "Samsung Galaxy S25 Edge",
@@ -1057,7 +1477,11 @@
     "camera_score": 8.7,
     "battery_score": 8.5,
     "performance_score": 9.1,
-    "image": "assets/images/products/samsung-galaxy-s25-edge.jpg"
+    "image": "assets/images/products/samsung-galaxy-s25-edge.jpg",
+    "price_score": 7.9,
+    "display_score": 9.1,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   },
   {
     "model": "Samsung Galaxy S25 FE",
@@ -1067,7 +1491,11 @@
     "camera_score": 8.5,
     "battery_score": 8.4,
     "performance_score": 9.1,
-    "image": "assets/images/products/samsung-galaxy-s25-fe.jpg"
+    "image": "assets/images/products/samsung-galaxy-s25-fe.jpg",
+    "price_score": 9.3,
+    "display_score": 9.2,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   },
   {
     "model": "Samsung Galaxy S25 Ultra",
@@ -1077,7 +1505,11 @@
     "camera_score": 9.0,
     "battery_score": 8.7,
     "performance_score": 9.5,
-    "image": "assets/images/products/samsung-galaxy-s25-ultra.jpg"
+    "image": "assets/images/products/samsung-galaxy-s25-ultra.jpg",
+    "price_score": 7.3,
+    "display_score": 9.4,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   },
   {
     "model": "Samsung Galaxy S25+",
@@ -1087,7 +1519,11 @@
     "camera_score": 8.6,
     "battery_score": 8.5,
     "performance_score": 9.1,
-    "image": "assets/images/products/samsung-galaxy-s25plus.jpg"
+    "image": "assets/images/products/samsung-galaxy-s25plus.jpg",
+    "price_score": 8.2,
+    "display_score": 9.1,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   },
   {
     "model": "Samsung Galaxy Z Flip7",
@@ -1097,7 +1533,11 @@
     "camera_score": 8.7,
     "battery_score": 8.4,
     "performance_score": 9.2,
-    "image": "assets/images/products/samsung-galaxy-z-flip7.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-flip7.jpg",
+    "price_score": 7.9,
+    "display_score": 9.2,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   },
   {
     "model": "Samsung Galaxy Z Flip7 FE",
@@ -1107,7 +1547,11 @@
     "camera_score": 8.5,
     "battery_score": 8.4,
     "performance_score": 9.1,
-    "image": "assets/images/products-generated/samsung-galaxy-z-flip7-fe.svg"
+    "image": "assets/images/products-generated/samsung-galaxy-z-flip7-fe.svg",
+    "price_score": 8.5,
+    "display_score": 9.2,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   },
   {
     "model": "Samsung Galaxy Z Fold7",
@@ -1117,6 +1561,10 @@
     "camera_score": 8.9,
     "battery_score": 8.5,
     "performance_score": 9.4,
-    "image": "assets/images/products/samsung-galaxy-z-fold7.jpg"
+    "image": "assets/images/products/samsung-galaxy-z-fold7.jpg",
+    "price_score": 5.5,
+    "display_score": 9.5,
+    "software_support_score": 9.2,
+    "software_score": 9.2
   }
 ]

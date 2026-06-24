@@ -4,10 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recommendation Results</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=flow19">
+  <link rel="stylesheet" href="assets/css/style.css?v=flow24">
 </head>
-<body class="site-page">
-  <main class="site-shell">
+<body class="dashboard-glass-page">
+  <div class="dashboard-glass-overlay"></div>
+
+  <main class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+      <a href="admin-profile.html?v=flow24" class="dashboard-profile" data-dashboard-profile-link>
+        <img src="assets/images/dashboard-profile-v2.png?v=flow19" alt="Profile">
+        <div>
+          <span class="dashboard-role">Admin</span>
+          <h2 data-dashboard-user-name>PhoneDSS User</h2>
+          <p data-dashboard-user-email>Signed in workspace</p>
+        </div>
+      </a>
+
+      <nav class="dashboard-menu">
+        <a href="dashboard.html?v=flow24" data-dashboard-nav="dashboard">Dashboard Overview</a>
+        <a href="products.html?v=flow24" data-dashboard-nav="products">Products</a>
+        <a href="dss.html?v=flow24" data-dashboard-nav="dss">DSS Evaluation</a>
+        <a href="results.html?v=flow24" data-dashboard-nav="results">Recommendation</a>
+        <a href="analytics.html?v=flow24" data-dashboard-nav="analytics">Analytics</a>
+        <a href="index.html">Back Home</a>
+        <a href="index.html" data-dashboard-logout>Logout</a>
+        <div class="dashboard-theme-row">
+          <button class="theme-toggle-btn" type="button" data-theme-toggle>Switch to Light Mode</button>
+        </div>
+      </nav>
+    </aside>
+
+    <section class="dashboard-main dashboard-page-main">
+      <div class="site-shell">
     <section class="site-hero">
       <div>
         <span class="site-kicker">Recommendation</span>
@@ -63,6 +91,14 @@
           <div id="final-advice" class="explanation-box">
             If your priority is balanced overall quality, start with the current top-ranked phone. If your budget is limited, compare it with the second-best alternative before making the final choice.
           </div>
+          <div style="margin-top:16px;">
+            <label for="save-result-name" class="hint-text" style="display:block; margin-bottom:8px;">Saved Result Name</label>
+            <input id="save-result-name" type="text" class="filter-field-input-like" placeholder="e.g. Budget Focus Comparison">
+          </div>
+          <div class="site-hero-actions" style="margin-top:18px;">
+            <button id="save-result-btn" class="site-link-btn primary" type="button">Save This Result</button>
+            <span id="save-result-status" class="hint-text">Save your current comparison for later review.</span>
+          </div>
         </article>
       </div>
 
@@ -85,10 +121,22 @@
             <a href="dss.html" class="site-link-btn subtle">Run Again</a>
           </div>
         </article>
+
+        <article class="site-panel">
+          <span class="site-kicker">Saved History</span>
+          <h3>Saved Comparisons</h3>
+          <div id="saved-comparison-list" class="comparison-grid">
+            <div class="comparison-row"><span>History</span><strong>Nothing saved yet</strong></div>
+          </div>
+        </article>
+      </div>
+    </section>
       </div>
     </section>
   </main>
 
+  <script src="assets/js/theme.js?v=flow22"></script>
+  <script src="assets/js/dashboard-sidebar.js?v=flow24"></script>
   <script src="assets/js/results.js?v=flow19"></script>
 </body>
 </html>

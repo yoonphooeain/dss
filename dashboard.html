@@ -4,125 +4,212 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=flow19">
+  <link rel="stylesheet" href="assets/css/style.css?v=flow26">
 </head>
 <body class="dashboard-glass-page">
   <div class="dashboard-glass-overlay"></div>
 
   <main class="dashboard-shell">
     <aside class="dashboard-sidebar">
-      <a href="admin-profile.html?v=flow19" class="dashboard-profile">
+      <a href="admin-profile.html?v=flow24" class="dashboard-profile" data-dashboard-profile-link>
         <img src="assets/images/dashboard-profile-v2.png?v=flow19" alt="Profile">
         <div>
           <span class="dashboard-role">Admin</span>
-          <h2 id="dashboard-user-name">PhoneDSS User</h2>
-          <p id="dashboard-user-email">Signed in workspace</p>
+          <h2 id="dashboard-user-name" data-dashboard-user-name>PhoneDSS User</h2>
+          <p id="dashboard-user-email" data-dashboard-user-email>Signed in workspace</p>
         </div>
       </a>
 
       <nav class="dashboard-menu">
-        <a href="dashboard.html?v=flow18" class="active">Overview</a>
-        <a href="products.html">Products</a>
-        <a href="dss.html">DSS Evaluation</a>
-        <a href="results.html">Recommendation</a>
-        <a href="analytics.html">Analytics</a>
+        <a href="dashboard.html?v=flow24" data-dashboard-nav="dashboard">Dashboard Overview</a>
+        <a href="products.html?v=flow24" data-dashboard-nav="products">Products</a>
+        <a href="dss.html?v=flow24" data-dashboard-nav="dss">DSS Evaluation</a>
+        <a href="results.html?v=flow24" data-dashboard-nav="results">Recommendation</a>
+        <a href="analytics.html?v=flow24" data-dashboard-nav="analytics">Analytics</a>
         <a href="index.html">Back Home</a>
-        <a href="index.html" id="dashboard-logout-btn">Logout</a>
+        <a href="index.html" id="dashboard-logout-btn" data-dashboard-logout>Logout</a>
+        <div class="dashboard-theme-row">
+          <button class="theme-toggle-btn" type="button" data-theme-toggle>Switch to Light Mode</button>
+        </div>
       </nav>
     </aside>
 
     <section class="dashboard-main">
+      <section class="dashboard-topbar">
+        <div class="dashboard-topbar-copy">
+          <span class="dashboard-kicker">Decision Support Overview</span>
+          <h1>PhoneDSS Dashboard Overview</h1>
+          <p>Track dataset scale, latest recommendation activity, and quick actions from one real-time workspace.</p>
+        </div>
+
+        <div class="dashboard-topbar-actions">
+          <div class="dashboard-topbar-links">
+            <a href="dss.html" class="dashboard-primary-link">Run Evaluation</a>
+            <a href="analytics.html" class="dashboard-secondary-link">Open Analytics</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-summary-row">
+        <article class="dashboard-summary-card">
+          <span class="dashboard-summary-label">Total Models</span>
+          <strong id="dashboard-summary-models">112</strong>
+          <small>Apple + Samsung records</small>
+        </article>
+
+        <article class="dashboard-summary-card">
+          <span class="dashboard-summary-label">Selected Phones</span>
+          <strong id="dashboard-summary-selected">0</strong>
+          <small>Latest DSS comparison set</small>
+        </article>
+
+        <article class="dashboard-summary-card">
+          <span class="dashboard-summary-label">Latest Winner</span>
+          <strong id="dashboard-summary-winner">No result yet</strong>
+          <small id="dashboard-summary-winner-note">Run DSS to identify a winner</small>
+        </article>
+
+        <article class="dashboard-summary-card">
+          <span class="dashboard-summary-label">Saved Comparisons</span>
+          <strong id="dashboard-summary-saved">0</strong>
+          <small>Reusable evaluation history</small>
+        </article>
+
+        <article class="dashboard-summary-card">
+          <span class="dashboard-summary-label">Active Mode</span>
+          <strong id="dashboard-summary-mode">Balanced</strong>
+          <small id="dashboard-summary-mode-note">Ready for a fresh run</small>
+        </article>
+      </section>
+
       <section class="dashboard-card-grid">
-        <article class="dashboard-glass-card revenue-card">
-          <small>Total Models</small>
-          <strong>112</strong>
-          <div class="dashboard-line-chart"></div>
-        </article>
-
-        <article class="dashboard-glass-card donut-card">
-          <small>Saved Evaluations</small>
-          <strong id="dashboard-saved-count">0</strong>
-          <div class="dashboard-progress">
-            <div class="dashboard-progress-ring" id="dashboard-progress-ring">Ready</div>
+        <article class="dashboard-glass-card dashboard-chart-card dashboard-bar-card">
+          <div class="dashboard-card-head">
+            <div>
+              <small>Weight distribution</small>
+              <strong>Criteria balance</strong>
+            </div>
+            <span class="dashboard-card-badge">Bars</span>
           </div>
-          <div class="dashboard-progress-meta">
-            <span id="dashboard-progress-meta-one">No run yet</span>
-            <span id="dashboard-progress-meta-two">Live charts ready</span>
-          </div>
-        </article>
 
-        <article class="dashboard-glass-card transaction-card">
-          <small>Recent Recommendation</small>
-          <strong id="dashboard-latest-winner">No result yet</strong>
-          <div class="dashboard-mini-list">
-            <div><span>Score</span><em id="dashboard-latest-score">Run DSS first</em></div>
-            <div><span>Runner-up</span><em id="dashboard-latest-runnerup">Waiting</em></div>
-            <div><span>Main reason</span><em id="dashboard-latest-reason">No explanation yet</em></div>
-          </div>
-        </article>
-
-        <article class="dashboard-glass-card analytics-card">
-          <small>Dataset Growth</small>
-          <strong>112 Models</strong>
-          <div class="dashboard-bars chart-violet"></div>
-        </article>
-
-        <article class="dashboard-glass-card load-card">
-          <small>Evaluation Progress</small>
-          <strong>Ready</strong>
-          <div class="dashboard-column-bars">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="dashboard-bars-matrix">
+            <div class="dashboard-bars-group">
+              <span style="height:58%"></span>
+              <span style="height:92%"></span>
+              <span style="height:86%"></span>
+              <span style="height:66%"></span>
+              <span style="height:72%"></span>
+              <span style="height:64%"></span>
+            </div>
+            <div class="dashboard-bars-labels">
+              <span>Price</span>
+              <span>Perf.</span>
+              <span>Camera</span>
+              <span>Battery</span>
+              <span>Display</span>
+              <span>Support</span>
+            </div>
           </div>
         </article>
 
-        <article class="dashboard-glass-card quick-links-card">
-          <small>Quick Access</small>
-          <strong>Workspace Links</strong>
-          <div class="dashboard-quick-links">
-            <a href="products.html">Dataset</a>
-            <a href="dss.html">Evaluate</a>
-            <a href="results.html">Recommendation</a>
-            <a href="analytics.html">Charts</a>
+        <article class="dashboard-glass-card dashboard-chart-card dashboard-line-card">
+          <div class="dashboard-card-head">
+            <div>
+              <small>Recommendation trend</small>
+              <strong>Recommendation Trend</strong>
+            </div>
+            <span class="dashboard-card-badge">Trend</span>
+          </div>
+
+          <div class="dashboard-line-legend">
+            <span><i class="is-violet"></i>Weighted score</span>
+            <span><i class="is-gold"></i>Preference shift</span>
+          </div>
+
+          <div class="dashboard-line-stage">
+            <div class="dashboard-line-axis">
+              <span>0</span>
+              <span>20</span>
+              <span>50</span>
+              <span>90</span>
+            </div>
+            <div class="dashboard-line-canvas"></div>
           </div>
         </article>
 
-        <article class="dashboard-glass-card insights-card">
-          <small>Criteria Summary</small>
-          <strong>Price, Performance, Camera, Battery, Display, Software</strong>
-          <div class="dashboard-bars chart-blue"></div>
-        </article>
+        <article class="dashboard-glass-card dashboard-chart-card dashboard-ring-card">
+          <div class="dashboard-card-head">
+            <div>
+              <small>Selection balance</small>
+              <strong>Brand status</strong>
+            </div>
+            <span class="dashboard-card-badge">Split</span>
+          </div>
 
-        <article class="dashboard-glass-card progress-list-card">
-          <small>System Flow</small>
-          <strong>DSS Process</strong>
-          <div class="dashboard-progress-list">
-            <div><span>Browse Products</span><em>430 / 900</em></div>
-            <i></i>
-            <div><span>Apply Weights</span><em>120 / 930</em></div>
-            <i></i>
-            <div><span>Get Winner</span><em>Ready</em></div>
+          <div class="dashboard-ring-layout">
+            <div class="dashboard-ring-shell">
+              <div class="dashboard-ring-chart"></div>
+            </div>
+
+            <div class="dashboard-ring-stats">
+              <div>
+                <span>Apple</span>
+                <strong>50%</strong>
+              </div>
+              <div>
+                <span>Samsung</span>
+                <strong>50%</strong>
+              </div>
+            </div>
           </div>
         </article>
 
-        <article class="dashboard-glass-card recent-list-card">
-          <small>Recent Evaluation Themes</small>
-          <strong>Latest Preference Focus</strong>
-          <div class="dashboard-recent-list">
-            <div><span>Camera Priority</span><em>High</em></div>
-            <div><span>Budget Comparison</span><em>Under $800</em></div>
-            <div><span>Battery Search</span><em>Daily use</em></div>
-            <div><span>Gaming Focus</span><em>Performance</em></div>
+        <article class="dashboard-glass-card dashboard-table-card">
+          <div class="dashboard-card-head dashboard-table-head">
+            <div>
+              <small>Recent activity</small>
+              <strong>Comparison log</strong>
+            </div>
+
+            <div class="dashboard-table-actions">
+              <select class="dashboard-table-filter" aria-label="Mode filter">
+                <option>Mode filter</option>
+                <option>Balanced</option>
+                <option>Budget</option>
+                <option>Camera</option>
+                <option>Performance</option>
+              </select>
+              <button class="dashboard-table-export" type="button" id="dashboard-export-btn">Export Log</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Comparison</th>
+                  <th>Mode</th>
+                  <th>Selected</th>
+                  <th>Winner Score</th>
+                  <th>Status</th>
+                  <th>Updated</th>
+                </tr>
+              </thead>
+              <tbody id="dashboard-history-table-body">
+                <tr>
+                  <td colspan="6" class="dashboard-table-empty">Run DSS first to populate the dashboard log.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </article>
       </section>
     </section>
   </main>
 
-  <script src="assets/js/dashboard.js?v=flow19"></script>
+  <script src="assets/js/phones-data.js?v=flow19"></script>
+  <script src="assets/js/theme.js?v=flow22"></script>
+  <script src="assets/js/dashboard-sidebar.js?v=flow24"></script>
+  <script src="assets/js/dashboard.js?v=flow26"></script>
 </body>
 </html>

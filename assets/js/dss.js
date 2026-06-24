@@ -4,11 +4,17 @@ const winnerBox = document.getElementById("winner-box");
 const explanationBox = document.getElementById("explanation-box");
 const dssForm = document.getElementById("dss-form");
 const selectionGrid = document.getElementById("selection-grid");
+const selectionSearchInput = document.getElementById("selection-search-input");
+const selectionBrandFilter = document.getElementById("selection-brand-filter");
+const selectedOnlyToggle = document.getElementById("selected-only-toggle");
 const weightSummaryNote = document.getElementById("weight-summary-note");
+const selectionLimitNote = document.getElementById("selection-limit-note");
 const selectedPhoneCount = document.getElementById("selected-phone-count");
 const liveTotalWeight = document.getElementById("live-total-weight");
 const liveBestMatch = document.getElementById("live-best-match");
 const resetBalancedWeightsButton = document.getElementById("reset-balanced-weights");
+const presetModeButtons = Array.from(document.querySelectorAll("[data-preset-mode]"));
+const presetModeNote = document.getElementById("preset-mode-note");
 const scoreBarCanvas = document.getElementById("dssScoreBarChart");
 const criteriaRadarCanvas = document.getElementById("dssCriteriaRadarChart");
 
@@ -30,11 +36,50 @@ const DEFAULT_WEIGHTS = {
   software_support_weight: 0.15,
 };
 
+const PRESET_WEIGHTS = {
+  balanced: { ...DEFAULT_WEIGHTS },
+  budget: {
+    price_weight: 0.35,
+    performance_weight: 0.15,
+    camera_weight: 0.1,
+    battery_weight: 0.15,
+    display_weight: 0.1,
+    software_support_weight: 0.15,
+  },
+  camera: {
+    price_weight: 0.1,
+    performance_weight: 0.15,
+    camera_weight: 0.35,
+    battery_weight: 0.1,
+    display_weight: 0.15,
+    software_support_weight: 0.15,
+  },
+  performance: {
+    price_weight: 0.1,
+    performance_weight: 0.35,
+    camera_weight: 0.15,
+    battery_weight: 0.15,
+    display_weight: 0.15,
+    software_support_weight: 0.1,
+  },
+};
+
+const PRESET_MODE_COPY = {
+  balanced: "Balanced mode is active. You can also fine-tune the sliders manually.",
+  budget: "Budget mode prioritizes affordability first, while keeping performance and long-term value in balance.",
+  camera: "Camera mode emphasizes photo and video quality while still preserving a balanced overall recommendation.",
+  performance: "Performance mode gives the strongest emphasis to speed and power for demanding everyday use.",
+  custom: "Custom mode is active because the sliders were adjusted manually.",
+};
+
 const WEIGHT_INPUT_IDS = CRITERIA.map((criterion) => criterion.weightKey);
 const RESULTS_KEY = "dssResults";
+const MIN_SELECTION = 2;
+const MAX_SELECTION = 5;
 let products = [];
 let scoreBarChart = null;
 let criteriaRadarChart = null;
+let activePresetMode = "balanced";
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
@@ -112,6 +157,36 @@ function normalizeWeights(weights) {
     normalized[criterion.weightKey] = weights[criterion.weightKey] / total;
     return normalized;
   }, {});
+}
+
+function applyWeightMap(weightMap) {
+  Object.entries(weightMap).forEach(([key, value]) => {
+    const input = document.getElementById(key);
+    if (input) input.value = value;
+  });
+}
+
+function updatePresetModeUI() {
+  presetModeButtons.forEach((button) => {
+    const isActive = button.dataset.presetMode === activePresetMode;
+    button.classList.toggle("preset-active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+
+  if (presetModeNote) {
+    presetModeNote.textContent = PRESET_MODE_COPY[activePresetMode] || PRESET_MODE_COPY.custom;
+  }
+}
+
+function setPresetMode(modeKey) {
+  const preset = PRESET_WEIGHTS[modeKey];
+  if (!preset) return;
+
+  activePresetMode = modeKey;
+  applyWeightMap(preset);
+  updatePresetModeUI();
+  updateWeightLabels();
+  recalculateAndRender();
 }
 
 function calculateScore(item, weights) {
@@ -199,7 +274,11 @@ function updateWeightLabels() {
 function renderSelectionCards(dataset) {
   if (!selectionGrid) return;
 
-  const preselectedModels = new Set(dataset.slice(0, 6).map((item) => item.model));
+  const currentSelections = new Set(
+    Array.from(document.querySelectorAll('input[name="selected_phone"]:checked')).map((input) => input.value)
+  );
+  const fallbackSelections = new Set(products.slice(0, MAX_SELECTION).map((item) => item.model));
+  const preselectedModels = currentSelections.size ? currentSelections : fallbackSelections;
 
   selectionGrid.innerHTML = dataset
     .map(
@@ -219,11 +298,45 @@ function renderSelectionCards(dataset) {
     .join("");
 }
 
+function applySelectionFilters() {
+  const query = selectionSearchInput?.value.trim().toLowerCase() || "";
+  const brand = selectionBrandFilter?.value || "all";
+  const selectedOnly = Boolean(selectedOnlyToggle?.checked);
+  const selectedModels = new Set(
+    Array.from(document.querySelectorAll('input[name="selected_phone"]:checked')).map((input) => input.value)
+  );
+
+  const filtered = products.filter((item) => {
+    const matchesQuery = item.model.toLowerCase().includes(query);
+    const matchesBrand = brand === "all" || item.brand === brand;
+    const matchesSelectedOnly = !selectedOnly || selectedModels.has(item.model);
+    return matchesQuery && matchesBrand && matchesSelectedOnly;
+  });
+
+  renderSelectionCards(filtered);
+}
+
 function getSelectedDataset() {
   const checked = Array.from(document.querySelectorAll('input[name="selected_phone"]:checked')).map(
     (input) => input.value
   );
   return checked.length ? products.filter((item) => checked.includes(item.model)) : products;
+}
+
+function updateSelectionStatus(selectedCount) {
+  if (!selectionLimitNote) return;
+
+  if (selectedCount < MIN_SELECTION) {
+    selectionLimitNote.textContent = `Please select at least ${MIN_SELECTION} phones to generate a comparison.`;
+    return;
+  }
+
+  if (selectedCount > MAX_SELECTION) {
+    selectionLimitNote.textContent = `Please reduce your selection to ${MAX_SELECTION} phones or fewer.`;
+    return;
+  }
+
+  selectionLimitNote.textContent = `Good selection. ${selectedCount} phone${selectedCount > 1 ? "s" : ""} chosen for this DSS comparison.`;
 }
 
 function renderScores(scores) {
@@ -407,6 +520,8 @@ function updateSummary(result, selectedDataset, rawWeights) {
     selectedPhoneCount.textContent = String(selectedDataset.length);
   }
 
+  updateSelectionStatus(selectedDataset.length);
+
   if (liveBestMatch) {
     liveBestMatch.textContent = result.winner ? result.winner.model : "No selection";
   }
@@ -424,6 +539,19 @@ function updateSummary(result, selectedDataset, rawWeights) {
 function recalculateAndRender() {
   const rawWeights = readWeights();
   const selectedDataset = getSelectedDataset();
+
+  if (selectedDataset.length < MIN_SELECTION) {
+    renderScores([]);
+    renderRanking([]);
+    renderWinner(null, []);
+    renderExplanation(`Please select at least ${MIN_SELECTION} phones to compare.`);
+    if (selectedPhoneCount) {
+      selectedPhoneCount.textContent = String(selectedDataset.length);
+    }
+    updateSelectionStatus(selectedDataset.length);
+    return;
+  }
+
   const result = localCalculate(selectedDataset, rawWeights);
   const explanation = createExplanation(result.winner, result.ranking);
 
@@ -439,20 +567,38 @@ function attachRealtimeEvents() {
   WEIGHT_INPUT_IDS.forEach((inputId) => {
     const input = document.getElementById(inputId);
     input.addEventListener("input", () => {
+      activePresetMode = "custom";
+      updatePresetModeUI();
       updateWeightLabels();
       recalculateAndRender();
     });
   });
 
-  selectionGrid.addEventListener("change", recalculateAndRender);
+  selectionGrid.addEventListener("change", (event) => {
+    const checkedInputs = Array.from(document.querySelectorAll('input[name="selected_phone"]:checked'));
+    if (checkedInputs.length > MAX_SELECTION && event.target.checked) {
+      event.target.checked = false;
+      updateSelectionStatus(checkedInputs.length - 1);
+      renderExplanation(`You can compare up to ${MAX_SELECTION} phones at a time.`);
+      return;
+    }
+
+    recalculateAndRender();
+  });
+
+  selectionSearchInput?.addEventListener("input", applySelectionFilters);
+  selectionBrandFilter?.addEventListener("change", applySelectionFilters);
+  selectedOnlyToggle?.addEventListener("change", applySelectionFilters);
+
+  presetModeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setPresetMode(button.dataset.presetMode);
+    });
+  });
 
   if (resetBalancedWeightsButton) {
     resetBalancedWeightsButton.addEventListener("click", () => {
-      Object.entries(DEFAULT_WEIGHTS).forEach(([key, value]) => {
-        document.getElementById(key).value = value;
-      });
-      updateWeightLabels();
-      recalculateAndRender();
+      setPresetMode("balanced");
     });
   }
 }
@@ -466,6 +612,7 @@ function initialize() {
         : []
   );
   renderSelectionCards(products);
+  updatePresetModeUI();
   updateWeightLabels();
   attachRealtimeEvents();
   recalculateAndRender();

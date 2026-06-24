@@ -6,6 +6,14 @@ const finalAdvice = document.getElementById("final-advice");
 const runnerUpName = document.getElementById("runner-up-name");
 const comparisonGrid = document.getElementById("comparison-grid");
 const topFactorList = document.getElementById("top-factor-list");
+const saveResultButton = document.getElementById("save-result-btn");
+const saveResultStatus = document.getElementById("save-result-status");
+const savedComparisonList = document.getElementById("saved-comparison-list");
+const saveResultNameInput = document.getElementById("save-result-name");
+const RESULTS_KEY = "dssResults";
+const SAVED_COMPARISONS_KEY = "phonedssSavedComparisons";
+
+let currentResult = null;
 
 function formatFactorLabel(label) {
   return label || "Overall score";
@@ -56,6 +64,10 @@ function createAdvice(winner, runnerUp) {
 }
 
 function renderFallback() {
+  currentResult = null;
+  if (saveResultNameInput) {
+    saveResultNameInput.value = "";
+  }
   bestPhoneName.textContent = "No result yet";
   bestPhoneSummary.textContent = "Run DSS Evaluation first to generate a real recommendation.";
   winnerDetails.innerHTML = `
@@ -70,6 +82,7 @@ function renderFallback() {
     <div class="comparison-row"><span>Runner-up Score</span><strong>Waiting</strong></div>
   `;
   topFactorList.innerHTML = `<div class="comparison-row"><span>Top Factor</span><strong>Waiting</strong></div>`;
+  renderSavedComparisons();
 }
 
 function renderTopFactors(winner) {
@@ -91,6 +104,7 @@ function renderTopFactors(winner) {
 }
 
 function renderResult(data) {
+  currentResult = data;
   const winner = data.winner;
   const runnerUp = data.ranking?.[1];
   const explanation = data.explanation || buildWhyItWins(winner, runnerUp, data.weights);
@@ -115,10 +129,139 @@ function renderResult(data) {
     `;
     runnerUpName.textContent = runnerUp.model;
   }
+
+  if (saveResultNameInput) {
+    saveResultNameInput.value = data.savedName || "";
+  }
+
+  renderSavedComparisons();
+}
+
+function getSavedComparisons() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(SAVED_COMPARISONS_KEY) || "[]");
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function setSavedComparisons(items) {
+  localStorage.setItem(SAVED_COMPARISONS_KEY, JSON.stringify(items));
+}
+
+function formatSavedTimestamp(value) {
+  if (!value) return "Saved result";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Saved result";
+  return date.toLocaleString();
+}
+
+function createSavedComparisonEntry(data) {
+  return {
+    id: data.generatedAt || `${Date.now()}`,
+    savedName: data.savedName || "",
+    savedAt: new Date().toISOString(),
+    winner: data.winner,
+    ranking: data.ranking,
+    explanation: data.explanation,
+    weights: data.weights || data.normalizedWeights || {},
+    rawWeights: data.rawWeights || {},
+    selectedModels: data.selectedModels || [],
+    generatedAt: data.generatedAt || new Date().toISOString(),
+  };
+}
+
+function updateSaveStatus(text) {
+  if (saveResultStatus) {
+    saveResultStatus.textContent = text;
+  }
+}
+
+function saveCurrentResult() {
+  if (!currentResult?.winner) {
+    updateSaveStatus("Run DSS Evaluation first before saving a comparison.");
+    return;
+  }
+
+  const savedComparisons = getSavedComparisons();
+  const resultId = currentResult.generatedAt || currentResult.winner.model;
+  const existingIndex = savedComparisons.findIndex((item) => item.id === resultId);
+  const customName = saveResultNameInput?.value.trim() || "";
+  const entry = createSavedComparisonEntry({
+    ...currentResult,
+    savedName: customName,
+  });
+
+  if (existingIndex >= 0) {
+    savedComparisons[existingIndex] = entry;
+    updateSaveStatus("This comparison was already saved. The saved copy has been refreshed.");
+  } else {
+    savedComparisons.unshift(entry);
+    updateSaveStatus("Current comparison saved successfully.");
+  }
+
+  setSavedComparisons(savedComparisons.slice(0, 10));
+  renderSavedComparisons();
+}
+
+function loadSavedComparison(id) {
+  const savedComparisons = getSavedComparisons();
+  const selected = savedComparisons.find((item) => item.id === id);
+  if (!selected) return;
+
+  const liveResult = {
+    winner: selected.winner,
+    ranking: selected.ranking,
+    explanation: selected.explanation,
+    weights: selected.weights,
+    rawWeights: selected.rawWeights,
+    selectedModels: selected.selectedModels,
+    generatedAt: selected.generatedAt,
+    savedName: selected.savedName || "",
+  };
+  localStorage.setItem(RESULTS_KEY, JSON.stringify(liveResult));
+  renderResult(liveResult);
+  updateSaveStatus("Saved comparison loaded into the current result view.");
+}
+
+function deleteSavedComparison(id) {
+  const savedComparisons = getSavedComparisons().filter((item) => item.id !== id);
+  setSavedComparisons(savedComparisons);
+  renderSavedComparisons();
+  updateSaveStatus("Saved comparison removed.");
+}
+
+function renderSavedComparisons() {
+  if (!savedComparisonList) return;
+
+  const savedComparisons = getSavedComparisons();
+  if (!savedComparisons.length) {
+    savedComparisonList.innerHTML = `<div class="comparison-row"><span>History</span><strong>Nothing saved yet</strong></div>`;
+    return;
+  }
+
+  savedComparisonList.innerHTML = savedComparisons
+    .map((item) => {
+      const displayName = item.savedName || item.winner?.model || "Saved result";
+      const winnerScore = item.winner?.score != null ? Number(item.winner.score).toFixed(2) : "0.00";
+      const savedTime = formatSavedTimestamp(item.savedAt);
+      return `
+        <div class="comparison-row">
+          <span>${displayName}<br><small class="hint-text">${savedTime}</small></span>
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+            <strong>${winnerScore}</strong>
+            <button class="site-link-btn subtle saved-result-action" type="button" data-load-id="${item.id}">Load</button>
+            <button class="site-link-btn subtle saved-result-action" type="button" data-delete-id="${item.id}">Delete</button>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
 }
 
 try {
-  const saved = JSON.parse(localStorage.getItem("dssResults"));
+  const saved = JSON.parse(localStorage.getItem(RESULTS_KEY));
   if (saved?.winner) {
     renderResult(saved);
   } else {
@@ -127,3 +270,18 @@ try {
 } catch (error) {
   renderFallback();
 }
+
+saveResultButton?.addEventListener("click", saveCurrentResult);
+
+savedComparisonList?.addEventListener("click", (event) => {
+  const loadButton = event.target.closest("[data-load-id]");
+  const deleteButton = event.target.closest("[data-delete-id]");
+
+  if (loadButton) {
+    loadSavedComparison(loadButton.dataset.loadId);
+  }
+
+  if (deleteButton) {
+    deleteSavedComparison(deleteButton.dataset.deleteId);
+  }
+});

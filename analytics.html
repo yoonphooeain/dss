@@ -4,11 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analytics</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=flow20">
+  <link rel="stylesheet" href="assets/css/style.css?v=flow27">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="site-page">
-  <main class="site-shell">
+<body class="dashboard-glass-page">
+  <div class="dashboard-glass-overlay"></div>
+
+  <main class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+      <a href="admin-profile.html?v=flow24" class="dashboard-profile" data-dashboard-profile-link>
+        <img src="assets/images/dashboard-profile-v2.png?v=flow19" alt="Profile">
+        <div>
+          <span class="dashboard-role">Admin</span>
+          <h2 data-dashboard-user-name>PhoneDSS User</h2>
+          <p data-dashboard-user-email>Signed in workspace</p>
+        </div>
+      </a>
+
+      <nav class="dashboard-menu">
+        <a href="dashboard.html?v=flow24" data-dashboard-nav="dashboard">Dashboard Overview</a>
+        <a href="products.html?v=flow24" data-dashboard-nav="products">Products</a>
+        <a href="dss.html?v=flow24" data-dashboard-nav="dss">DSS Evaluation</a>
+        <a href="results.html?v=flow24" data-dashboard-nav="results">Recommendation</a>
+        <a href="analytics.html?v=flow24" data-dashboard-nav="analytics">Analytics</a>
+        <a href="index.html">Back Home</a>
+        <a href="index.html" data-dashboard-logout>Logout</a>
+        <div class="dashboard-theme-row">
+          <button class="theme-toggle-btn" type="button" data-theme-toggle>Switch to Light Mode</button>
+        </div>
+      </nav>
+    </aside>
+
+    <section class="dashboard-main dashboard-page-main">
+      <div class="site-shell">
     <section class="site-hero">
       <div>
         <span class="site-kicker">Analytics</span>
@@ -17,11 +45,6 @@
           The analytics page supports the DSS result with charts that compare brands, track trends
           over time, and show data distribution for presentation and user insight.
         </p>
-        <div class="hero-tags">
-          <span class="tag">Brand comparison</span>
-          <span class="tag">Trend over years</span>
-          <span class="tag">Winner explanation</span>
-        </div>
         <p id="analytics-live-note" class="site-note">
           Run DSS Evaluation first to update these charts with your latest weights and ranking.
         </p>
@@ -81,6 +104,15 @@
       </article>
 
       <article class="site-card">
+        <span class="site-kicker">Ranking</span>
+        <h3>Top 5 Smartphone Scores</h3>
+        <p id="analytics-topfive-copy">Highest-ranked smartphones from the latest DSS calculation.</p>
+        <div class="chart-canvas-wrap">
+          <canvas id="topFiveScoresChart"></canvas>
+        </div>
+      </article>
+
+      <article class="site-card">
         <span class="site-kicker">Trend</span>
         <h3>Trend Over Years</h3>
         <p id="analytics-trend-copy">Weighted score trend across selected model years for Apple and Samsung.</p>
@@ -104,6 +136,15 @@
         <p id="analytics-radar-copy">Criterion-level comparison of the strongest two phones in the latest run.</p>
         <div class="chart-canvas-wrap">
           <canvas id="winnerRadarChart"></canvas>
+        </div>
+      </article>
+
+      <article class="site-card analytics-wide-card">
+        <span class="site-kicker">Relationship</span>
+        <h3>Price vs Final Score</h3>
+        <p id="analytics-price-score-copy">Relationship between smartphone price and final weighted score.</p>
+        <div class="chart-canvas-wrap analytics-factor-wrap">
+          <canvas id="priceScoreScatterChart"></canvas>
         </div>
       </article>
 
@@ -134,8 +175,12 @@
         <p id="analytics-insight-three-copy">Charts support recommendation, but the final choice should still follow user preference weights.</p>
       </article>
     </section>
+      </div>
+    </section>
   </main>
 
+  <script src="assets/js/theme.js?v=flow22"></script>
+  <script src="assets/js/dashboard-sidebar.js?v=flow24"></script>
   <script src="assets/js/charts.js?v=flow20"></script>
 </body>
 </html>

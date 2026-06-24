@@ -68,6 +68,31 @@ def calculate_scores(
     return scores, ranking, winner, weights
 
 
+def generate_explanation(winner, ranking):
+    if not winner:
+        return "Choose phones and assign weights to generate a recommendation."
+
+    runner_up = ranking[1] if len(ranking) > 1 else None
+    top_factors = (winner.get("contributions") or [])[:3]
+    factor_text = " and ".join(item["label"].lower() for item in top_factors) if top_factors else "balanced criteria"
+    contribution_text = (
+        " Top contributing factors: "
+        + ", ".join(f'{item["label"]} ({item["weightedScore"]:.2f})' for item in top_factors)
+        + "."
+        if top_factors
+        else ""
+    )
+    runner_text = (
+        f" It remains ahead of {runner_up['model']} in the weighted ranking."
+        if runner_up
+        else ""
+    )
+    return (
+        f"{winner['model']} wins because {factor_text} scores are stronger under your current preferences."
+        f"{contribution_text}{runner_text}"
+    )
+
+
 def load_dataset(path=DATASET_PATH):
     with open(path, "r", encoding="utf-8") as file:
         return json.load(file)

@@ -4,11 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DSS Evaluation</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=liveui18">
+  <link rel="stylesheet" href="assets/css/style.css?v=flow24">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="site-page">
-  <main class="site-shell">
+<body class="dashboard-glass-page">
+  <div class="dashboard-glass-overlay"></div>
+
+  <main class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+      <a href="admin-profile.html?v=flow24" class="dashboard-profile" data-dashboard-profile-link>
+        <img src="assets/images/dashboard-profile-v2.png?v=flow19" alt="Profile">
+        <div>
+          <span class="dashboard-role">Admin</span>
+          <h2 data-dashboard-user-name>PhoneDSS User</h2>
+          <p data-dashboard-user-email>Signed in workspace</p>
+        </div>
+      </a>
+
+      <nav class="dashboard-menu">
+        <a href="dashboard.html?v=flow24" data-dashboard-nav="dashboard">Dashboard Overview</a>
+        <a href="products.html?v=flow24" data-dashboard-nav="products">Products</a>
+        <a href="dss.html?v=flow24" data-dashboard-nav="dss">DSS Evaluation</a>
+        <a href="results.html?v=flow24" data-dashboard-nav="results">Recommendation</a>
+        <a href="analytics.html?v=flow24" data-dashboard-nav="analytics">Analytics</a>
+        <a href="index.html">Back Home</a>
+        <a href="index.html" data-dashboard-logout>Logout</a>
+        <div class="dashboard-theme-row">
+          <button class="theme-toggle-btn" type="button" data-theme-toggle>Switch to Light Mode</button>
+        </div>
+      </nav>
+    </aside>
+
+    <section class="dashboard-main dashboard-page-main">
+      <div class="site-shell">
     <section class="site-hero">
       <div>
         <span class="site-kicker">DSS Evaluation</span>
@@ -17,11 +45,6 @@
           Select phones from the dataset, define your criteria weights, and let the DSS system return
           scores, ranking, the winner, and a short explanation.
         </p>
-        <div class="hero-tags">
-          <span class="tag">Criteria weights</span>
-          <span class="tag">Selected phones</span>
-          <span class="tag">Ranking + winner</span>
-        </div>
       </div>
 
       <div class="site-visual-stack">
@@ -59,6 +82,22 @@
               <span>Live Best Match</span>
               <strong id="live-best-match">Awaiting input</strong>
             </div>
+          </div>
+
+          <div class="site-sidebar-card preset-mode-card">
+            <div class="preset-mode-row">
+              <div>
+                <h3>Preset Recommendation Modes</h3>
+                <p>Apply quick weight profiles for budget, camera, or performance-focused recommendations.</p>
+              </div>
+              <div class="preset-mode-buttons">
+                <button class="site-link-btn subtle preset-mode-btn preset-active" type="button" data-preset-mode="balanced">Balanced</button>
+                <button class="site-link-btn subtle preset-mode-btn" type="button" data-preset-mode="budget">Best for Budget</button>
+                <button class="site-link-btn subtle preset-mode-btn" type="button" data-preset-mode="camera">Best for Camera</button>
+                <button class="site-link-btn subtle preset-mode-btn" type="button" data-preset-mode="performance">Best for Performance</button>
+              </div>
+            </div>
+            <p class="site-note preset-mode-note" id="preset-mode-note">Balanced mode is active. You can also fine-tune the sliders manually.</p>
           </div>
 
           <div class="weight-grid dss-slider-grid">
@@ -109,7 +148,30 @@
           </div>
 
           <h3 style="margin-top: 24px;">Selected Phones</h3>
-          <p class="site-note">This DSS dataset contains the full iPhone and Samsung model list with six criteria used for weighted scoring.</p>
+          <p class="site-note">Choose between 2 and 5 phones for a cleaner DSS comparison. This dataset includes iPhone and Samsung models with six scoring criteria.</p>
+          <div class="site-note" id="selection-limit-note" style="margin-top: 10px;">
+            Please select at least 2 phones and no more than 5 phones.
+          </div>
+          <div class="filter-grid" style="margin-top: 16px;">
+            <div class="filter-field">
+              <label for="selection-search-input">Search Model</label>
+              <input id="selection-search-input" type="text" placeholder="Search iPhone 15, Galaxy S24, ...">
+            </div>
+            <div class="filter-field">
+              <label for="selection-brand-filter">Brand</label>
+              <select id="selection-brand-filter">
+                <option value="all">All Brands</option>
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+              </select>
+            </div>
+          </div>
+          <div class="site-note" style="margin-top: 12px; display: flex; align-items: center; gap: 10px;">
+            <label for="selected-only-toggle" style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+              <input id="selected-only-toggle" type="checkbox">
+              <span>Show selected phones only</span>
+            </label>
+          </div>
           <div id="selection-grid" class="selection-grid"></div>
 
           <div class="site-hero-actions dss-live-actions" style="margin-top: 22px;">
@@ -181,9 +243,13 @@
         </section>
       </div>
     </section>
+      </div>
+    </section>
   </main>
 
   <script src="assets/js/phones-data.js?v=liveui18"></script>
+  <script src="assets/js/theme.js?v=flow22"></script>
+  <script src="assets/js/dashboard-sidebar.js?v=flow24"></script>
   <script src="assets/js/dss.js?v=liveui18"></script>
 </body>
 </html>
