@@ -4,9 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PhoneDSS Home</title>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
   <link rel="stylesheet" href="assets/css/style.css?v=flow29">
 </head>
 <body class="home-glass-page home-clean-page">
+  <section class="dss-intro" id="dss-intro" aria-label="PhoneDSS introduction">
+    <div class="dss-intro-glow"></div>
+    <div class="dss-intro-copy">
+      <span class="dss-intro-kicker">Smartphone Selection Thesis</span>
+      <h1>Smartphone Selection<br>Decision Support System</h1>
+      <p>
+        PhoneDSS is a web-based thesis project for comparing 112 iPhone and Samsung models from
+        2010 to 2025. It applies the Weighted Sum Model to rank each phone using your preferred
+        weights and produces a clear, personalized, and explainable recommendation.
+      </p>
+      <div class="dss-intro-details" aria-label="Project methods and technologies">
+        <div>
+          <span>Evaluation Criteria</span>
+          <strong>Price, Performance, Camera, Battery, Display &amp; Software Support</strong>
+        </div>
+        <div>
+          <span>Technology Stack</span>
+          <strong>HTML, CSS, JavaScript, Chart.js, JSON, Python &amp; Flask</strong>
+        </div>
+      </div>
+      <button class="dss-intro-enter" id="dss-intro-enter" type="button">
+        <span>Enter PhoneDSS</span>
+        <span aria-hidden="true">&#8594;</span>
+      </button>
+    </div>
+    <div class="dss-intro-robot" aria-label="Interactive 3D robot">
+      <spline-viewer
+        loading-anim-type="spinner-small-dark"
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode">
+      </spline-viewer>
+      <span class="dss-spline-badge-cover" aria-hidden="true"></span>
+      <span class="dss-intro-hint">Drag to explore</span>
+    </div>
+    <div class="dss-intro-number" aria-hidden="true">01</div>
+  </section>
   <div class="home-glass-overlay"></div>
 
   <main class="home-shell home-clean-shell">
@@ -149,5 +185,26 @@
 
   <script src="assets/js/theme.js?v=flow22"></script>
   <script src="assets/js/home.js?v=flow19"></script>
+  <script>
+    (function () {
+      var intro = document.getElementById('dss-intro');
+      var enterButton = document.getElementById('dss-intro-enter');
+
+      if (sessionStorage.getItem('phoneDssEntered') === 'true') {
+        intro.remove();
+        return;
+      }
+
+      document.body.classList.add('intro-active');
+      enterButton.addEventListener('click', function () {
+        sessionStorage.setItem('phoneDssEntered', 'true');
+        intro.classList.add('is-leaving');
+        document.body.classList.remove('intro-active');
+        window.setTimeout(function () {
+          intro.remove();
+        }, 850);
+      });
+    }());
+  </script>
 </body>
 </html>
